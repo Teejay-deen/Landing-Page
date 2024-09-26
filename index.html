@@ -4,94 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
+    <!-- Preconnect only once for each unique domain -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <!-- Google Fonts Import -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-
+    <!-- TailwindCSS Import -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-black h-screen">
-      <nav
-        class="w-full flex font-clash flex-col md:flex-row justify-between items-center md:px-20 lg:px-30 md:gap-10 gap-4 py-4 border-b"
-      >
-        <!-- Logo -->
-        <div class="mt-2 cursor-pointer">
-          <img src="./images/Logo.svg" alt="Logo" class="w-28 sm:w-32 md:w-40" />
-        </div>
+    <nav
+      class="w-full flex font-clash flex-col md:flex-row justify-between items-center md:px-20 lg:px-30 md:gap-10 gap-4 py-4 border-b"
+    >
+      <!-- Logo -->
+      <div class="mt-2 cursor-pointer">
+        <img src="./images/Logo.svg" alt="Logo" class="w-28 sm:w-32 md:w-40" />
+      </div>
 
-        <!-- Mobile Menu Button -->
-        <div class="block  md:hidden">
-          <button id="menu-btn" class="text-white focus:outline-none">
-            <img src="./images/.svg" alt="Menu Icon" class="w-6 h-6" />
+      <!-- Mobile Menu Button -->
+      <div class="block md:hidden">
+        <button id="menu-btn" class="text-white focus:outline-none">
+          <img src="./images/.svg" alt="Menu Icon" class="w-6 h-6" />
+        </button>
+      </div>
+
+      <!-- Navigation Links (Hidden on mobile initially) -->
+      <div
+        id="nav-links"
+        class="hidden md:flex flex-col md:flex-row justify-between items-center md:gap-10 gap-6 w-full md:w-auto"
+      >
+        <div class="text-white flex gap-3 items-center">
+          <span class="text-base sm:text-lg md:text-xl mt-2">How it works</span>
+          <button
+            class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center"
+          >
+            <img
+              class="w-3 sm:w-4"
+              src="./images/Vector 64.svg"
+              alt="How it works icon"
+            />
+            <span>H</span>
           </button>
         </div>
-
-        <!-- Navigation Links (Hidden on mobile initially) -->
-        <div
-          id="nav-links"
-          class="hidden md:flex flex-col md:flex-row justify-between items-center md:gap-10 gap-6 w-full md:w-auto"
-        >
-          <div class="text-white flex gap-3 items-center">
-            <span class="text-base sm:text-lg md:text-xl mt-2">How it works</span>
-            <button
-              class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center"
-            >
-              <img
-                class="w-3 sm:w-4"
-                src="./images/Vector 64.svg"
-                alt="How it works icon"
-              />
-              <span>H</span>
-            </button>
-          </div>
-          <div class="text-white flex gap-3 items-center">
-            <span class="text-base sm:text-lg md:text-xl mt-2">Features</span>
-            <button
-              class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center"
-            >
-              <img
-                class="w-3 sm:w-4"
-                src="./images/Vector 64.svg"
-                alt="Features icon"
-              />
-              <span>F</span>
-            </button>
-          </div>
-          <div class="text-white flex gap-3 items-center">
-            <span class="text-base sm:text-lg md:text-xl mt-2">FAQ</span>
-            <button
-              class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center"
-            >
-              <img
-                class="w-3 sm:w-4"
-                src="./images/Vector 64.svg"
-                alt="FAQ icon"
-              />
-              <span>H</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Join Waitlist Button -->
-        <div class="w-full md:w-auto mt-4 md:mt-0">
-          <div
-            class="border-[5px] px-5 sm:px-7 py-2 rounded-full bg-[#E83B04] text-center"
+        <div class="text-white flex gap-3 items-center">
+          <span class="text-base sm:text-lg md:text-xl mt-2">Features</span>
+          <button
+            class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center"
           >
-            <button class="text-white rounded-full">Join waitlist</button>
-          </div>
+            <img
+              class="w-3 sm:w-4"
+              src="./images/Vector 64.svg"
+              alt="Features icon"
+            />
+            <span>F</span>
+          </button>
         </div>
-      </nav>
+        <div class="text-white flex gap-3 items-center">
+          <span class="text-base sm:text-lg md:text-xl mt-2">FAQ</span>
+          <button
+            class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center"
+          >
+            <img
+              class="w-3 sm:w-4"
+              src="./images/Vector 64.svg"
+              alt="FAQ icon"
+            />
+            <span>H</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Join Waitlist Button -->
+      <div class="w-full md:w-auto mt-4 md:mt-0">
+        <div
+          class="border-[5px] px-5 sm:px-7 py-2 rounded-full bg-[#E83B04] text-center"
+        >
+          <button class="text-white rounded-full">Join waitlist</button>
+        </div>
+      </div>
+    </nav>
 
     <!-- title block -->
 
@@ -100,11 +97,13 @@
     >
       <div class="text-white text-center">
         <img src="./images/Row.svg" alt="Beta Testers" class="mx-auto" />
-        <span class="text-base text-[#737373] font-dmSans">from our Beta Testers</span>
+        <span class="text-base text-[#737373] font-dmSans"
+          >from our Beta Testers</span
+        >
       </div>
 
       <div
-        class="text-white font-clash text-[40px] text-center sm:text-[60px] lg:text-[76px] mt-5 leading-tight"
+        class="text-white font-dmSans text-[40px] text-center sm:text-[60px] lg:text-[76px] mt-5 leading-tight"
       >
         Summarize Your Podcasts
         <div class="text-center px-2 sm:px-5">and Emails in Minutes</div>
@@ -177,9 +176,7 @@
           <div class="mt-1"><img src="./images/female.svg" alt="" /></div>
           <div class="flex flex-col">
             <p class="font-normal text-[14px] text-[#F2F2F2]">Sara Davis</p>
-            <p class="font-normal text-[12px] text-[#AAAAAA]">
-              Gym Enthusiast
-            </p>
+            <p class="font-normal text-[12px] text-[#AAAAAA]">Gym Enthusiast</p>
           </div>
         </div>
       </div>
@@ -210,9 +207,7 @@
           <div class="mt-1"><img src="./images/female.svg" alt="" /></div>
           <div class="flex flex-col">
             <p class="font-normal text-[14px] text-[#F2F2F2]">Sara Davis</p>
-            <p class="font-normal text-[12px] text-[#AAAAAA]">
-              Gym Enthusiast
-            </p>
+            <p class="font-normal text-[12px] text-[#AAAAAA]">Gym Enthusiast</p>
           </div>
         </div>
       </div>
@@ -240,7 +235,9 @@
           <div
             class="border-[#292929] h-[128px] border mt-4 rounded-2xl rotate-[5deg]"
           >
-            <p class="px-5 mt-6 font-normal font-clash text-[14px] text-[#FFFFFF]">
+            <p
+              class="px-5 mt-6 font-normal font-clash text-[14px] text-[#FFFFFF]"
+            >
               STEP 1
             </p>
             <p class="px-5 font-dmSans mt-3 font-medium text-2xl">
@@ -248,7 +245,9 @@
             </p>
           </div>
           <div class="border-[#292929] h-[128px] border mt-6 rounded-2xl">
-            <p class="px-5 mt-6 font-normal font-clash text-[14px] text-[#FFFFFF]">
+            <p
+              class="px-5 mt-6 font-normal font-clash text-[14px] text-[#FFFFFF]"
+            >
               STEP 2
             </p>
             <p class="px-5 font-dmSans mt-3 font-medium text-2xl">
@@ -258,7 +257,9 @@
           <div
             class="border-[#292929] h-[128px] border mt-6 rounded-2xl -rotate-[5deg]"
           >
-            <p class="px-5 mt-6 font-clash font-normal text-[14px] text-[#FFFFFF]">
+            <p
+              class="px-5 mt-6 font-clash font-normal text-[14px] text-[#FFFFFF]"
+            >
               STEP 3
             </p>
             <p class="px-5 font-dmSans mt-3 font-medium text-2xl">
@@ -292,7 +293,9 @@
               alt="Simplicity Icon"
             />
           </div>
-          <p class="mt-3 font-normal text-xl text-[#FFFFFF] font-clash">Simplicity</p>
+          <p class="mt-3 font-normal text-xl text-[#FFFFFF] font-clash">
+            Simplicity
+          </p>
           <div class="font-normal font-dmSans h-[125px] text-lg text-[#94969C]">
             With so much information (emails, podcasts, etc.) being generated
             daily, consequi.ai cuts through the noise and gives you the most
@@ -325,7 +328,9 @@
               alt="Data Security Icon"
             />
           </div>
-          <p class="mt-3 font-normal text-xl text-[#FFFFFF] font-clash">Data Security</p>
+          <p class="mt-3 font-normal text-xl text-[#FFFFFF] font-clash">
+            Data Security
+          </p>
           <div class="font-normal h-[125px] text-lg font-dmSans text-[#94969C]">
             Because your emails and podcasts contain personal and sensitive
             information, we've implemented industry-leading security measures to
@@ -342,7 +347,9 @@
         <p class="font-normal text-4xl font-clash text-white text-center">
           Frequently Asked Questions
         </p>
-        <p class="mt-6 font-normal text-xl text-[#D6D6D6] font-dmSans text-center">
+        <p
+          class="mt-6 font-normal text-xl text-[#D6D6D6] font-dmSans text-center"
+        >
           Find answers to common questions about our folder management app.
         </p>
         <div class="w-full max-w-3xl mt-10 mb-12">
@@ -373,7 +380,9 @@
           <!-- FAQ Item 2 -->
           <div class="faq-item hover:bg-[#29292926] rounded-xl p-4 mb-5">
             <div class="flex justify-between">
-              <p class="font-medium text-xl font-clash text-[#F7F7F7]">Is my data safe?</p>
+              <p class="font-medium text-xl font-clash text-[#F7F7F7]">
+                Is my data safe?
+              </p>
               <div class="toggle-icon cursor-pointer">
                 <img
                   class="icon"
@@ -422,7 +431,9 @@
 
     <section class="text-white mt-24">
       <div class="flex flex-col items-center text-center">
-        <p class="font-normal text-[56px] font-clash sm:text-[71px] w-full max-w-2xl">
+        <p
+          class="font-normal text-[56px] font-clash sm:text-[71px] w-full max-w-2xl"
+        >
           <!-- Responsive font size -->
           Ready to Simplify your Days
         </p>
