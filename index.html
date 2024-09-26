@@ -6,8 +6,8 @@
     <title>Landing Page</title>
     <!-- Preconnect only once for each unique domain -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="/tailwind.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <!-- Google Fonts Import -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
   </head>
   <body class="bg-black h-screen">
     <nav
-      class="w-full flex font-clash flex-col md:flex-row justify-between items-center md:px-20 lg:px-30 md:gap-10 gap-4 py-4 border-b"
+      class="w-full flex font-clash flex-col md:flex-row justify-between items-center md:px-20 lg:px-30 md:gap-10 gap-4 py-4 border-b sticky top-0 z-50 bg-black"
     >
       <!-- Logo -->
       <div class="mt-2 cursor-pointer">
@@ -30,7 +30,7 @@
       <!-- Mobile Menu Button -->
       <div class="block md:hidden">
         <button id="menu-btn" class="text-white focus:outline-none">
-          <img src="./images/.svg" alt="Menu Icon" class="w-6 h-6" />
+          <img src="./images/menu.svg" alt="Menu Icon" class="w-6 h-6" />
         </button>
       </div>
 
@@ -122,14 +122,14 @@
 
       <div class="flex flex-col items-center mt-8">
         <form class="flex flex-col sm:flex-row items-center w-full">
-          <!-- Input Field -->
+          
           <input
             type="email"
             placeholder="Your email"
             class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
 
-          <!-- Button -->
+          
           <div class="bg-white"></div>
           <div
             class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2"
@@ -147,71 +147,97 @@
     </section>
 
     <!-- team card -->
-    <section
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-14 px-4 text-white"
-    >
-      <div class="bg-[#232526] font-dmSans mb-4 h-[168px] rounded-2xl p-[22px]">
-        <p class="text-[15px] font-normal">
-          The team took our vision and turned it into a powerful brand that
-          speaks to our core values.
-        </p>
-        <div class="flex gap-3 mt-6">
-          <div class="mt-1"><img src="./images/Div.png" alt="" /></div>
-          <div class="flex flex-col">
-            <p class="font-normal text-[14px] text-[#F2F2F2]">Mark Thompson</p>
-            <p class="font-normal text-[12px] text-[#AAAAAA]">
-              Front End Developer
-            </p>
+    <div class="overflow-hidden w-full">
+      <section
+        class="flex gap-4 mt-14 px-4 text-white animate-scroll flex-wrap lg:flex-nowrap"
+      >
+        <!-- Testimonial 1 -->
+        <div
+          class="bg-[#232526] font-dmSans h-auto w-full sm:w-[300px] rounded-2xl p-4 sm:p-[22px]"
+        >
+          <p class="text-[14px] sm:text-[15px] font-normal">
+            The team took our vision and turned it into a powerful brand that
+            speaks to our core values.
+          </p>
+          <div class="flex gap-3 mt-4 sm:mt-6">
+            <div class="mt-1"><img src="./images/Div.png" alt="" /></div>
+            <div class="flex flex-col">
+              <p class="font-normal text-[13px] sm:text-[14px] text-[#F2F2F2]">
+                Mark Thompson
+              </p>
+              <p class="font-normal text-[11px] sm:text-[12px] text-[#AAAAAA]">
+                Front End Developer
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="bg-[#232526] mb-4 h-[168px] rounded-2xl p-[22px]">
-        <p class="text-[14px] font-normal">
-          Consequi.ai has revolutionised my mornings. I now start each day
-          informed without the hassle of scrolling through endless emails and
-          podcast episodes.
-        </p>
-        <div class="flex gap-3 mt-1">
-          <div class="mt-1"><img src="./images/female.svg" alt="" /></div>
-          <div class="flex flex-col">
-            <p class="font-normal text-[14px] text-[#F2F2F2]">Sara Davis</p>
-            <p class="font-normal text-[12px] text-[#AAAAAA]">Gym Enthusiast</p>
+        <!-- Testimonial 2 -->
+        <div
+          class="bg-[#232526] h-auto w-full sm:w-[300px] rounded-2xl p-4 sm:p-[22px]"
+        >
+          <p class="text-[14px] font-normal">
+            Consequi.ai has revolutionised my mornings. I now start each day
+            informed without the hassle of scrolling through endless emails and
+            podcast episodes.
+          </p>
+          <div class="flex gap-3 mt-4 sm:mt-6">
+            <div class="mt-1"><img src="./images/female.svg" alt="" /></div>
+            <div class="flex flex-col">
+              <p class="font-normal text-[13px] sm:text-[14px] text-[#F2F2F2]">
+                Sara Davis
+              </p>
+              <p class="font-normal text-[11px] sm:text-[12px] text-[#AAAAAA]">
+                Gym Enthusiast
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="bg-[#232526] mb-4 h-[168px] rounded-2xl p-[22px]">
-        <p class="text-[15px] font-normal">
-          The team took our vision and turned it into a powerful brand that
-          speaks to our core values.
-        </p>
-        <div class="flex gap-3 mt-6">
-          <div class="mt-1"><img src="./images/Div.png" alt="" /></div>
-          <div class="flex flex-col">
-            <p class="font-normal text-[14px] text-[#F2F2F2]">Mark Thompson</p>
-            <p class="font-normal text-[12px] text-[#AAAAAA]">
-              Front End Developer
-            </p>
+        <!-- Testimonial 3 -->
+        <div
+          class="bg-[#232526] h-auto w-full sm:w-[300px] rounded-2xl p-4 sm:p-[22px]"
+        >
+          <p class="text-[14px] sm:text-[15px] font-normal">
+            The team took our vision and turned it into a powerful brand that
+            speaks to our core values.
+          </p>
+          <div class="flex gap-3 mt-4 sm:mt-6">
+            <div class="mt-1"><img src="./images/Div.png" alt="" /></div>
+            <div class="flex flex-col">
+              <p class="font-normal text-[13px] sm:text-[14px] text-[#F2F2F2]">
+                Mark Thompson
+              </p>
+              <p class="font-normal text-[11px] sm:text-[12px] text-[#AAAAAA]">
+                Front End Developer
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="bg-[#232526] mb-4 h-[168px] rounded-2xl p-[22px]">
-        <p class="text-[14px] font-normal">
-          Consequi.ai has revolutionised my mornings. I now start each day
-          informed without the hassle of scrolling through endless emails and
-          podcast episodes.
-        </p>
-        <div class="flex gap-3 mt-1">
-          <div class="mt-1"><img src="./images/female.svg" alt="" /></div>
-          <div class="flex flex-col">
-            <p class="font-normal text-[14px] text-[#F2F2F2]">Sara Davis</p>
-            <p class="font-normal text-[12px] text-[#AAAAAA]">Gym Enthusiast</p>
+        <!-- Testimonial 4 -->
+        <div
+          class="bg-[#232526] h-auto w-full sm:w-[300px] rounded-2xl p-4 sm:p-[22px]"
+        >
+          <p class="text-[14px] font-normal">
+            Consequi.ai has revolutionised my mornings. I now start each day
+            informed without the hassle of scrolling through endless emails and
+            podcast episodes.
+          </p>
+          <div class="flex gap-3 mt-4 sm:mt-6">
+            <div class="mt-1"><img src="./images/female.svg" alt="" /></div>
+            <div class="flex flex-col">
+              <p class="font-normal text-[13px] sm:text-[14px] text-[#F2F2F2]">
+                Sara Davis
+              </p>
+              <p class="font-normal text-[11px] sm:text-[12px] text-[#AAAAAA]">
+                Gym Enthusiast
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- Get started section -->
     <section class="text-white mt-24 px-4">
