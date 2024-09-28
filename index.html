@@ -1,488 +1,567 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing Page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .custom-nav-bar {
+        border-bottom-color: #333;
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Ensure it stays above other elements */
+      }
+      .custom-nav-bar {
+        border-bottom-color: #333;
+      }
 
-  <style>
-    .custom-nav-bar {
-      border-bottom-color: #333;
-    }
+      @font-face {
+        font-family: "Clash Display";
+        src: url("./font/clash-display.ttf");
+      }
 
-    @font-face {
-      font-family: 'Clash Display';
-      src: url('./font/clash-display.ttf');
-    }
-
-    @font-face {
-      font-family: 'DM Sans';
-      src: url('./font/dm-sans-regular.ttf');
-      font-weight: 400;
-      font-style: normal;
-    }
-  </style>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    console.log("Here")
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#1D4ED8',
-            secondary: '#F59E0B',
-            customGrey: '#E2E2E2',
-          },
-          fontFamily: {
-            sans: ['DM Sans'],
-            clash: ['Clash Display', 'sans-serif'],
+      @font-face {
+        font-family: "DM Sans";
+        src: url("./font/dm-sans-regular.ttf");
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      console.log("Here");
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1D4ED8",
+              secondary: "#F59E0B",
+              customGrey: "#E2E2E2",
+            },
+            fontFamily: {
+              sans: ["DM Sans"],
+              clash: ["Clash Display", "sans-serif"],
+            },
           },
         },
-      }
-    };
-  </script>
-</head>
+      };
+    </script>
+  </head>
 
-<body class="bg-black h-screen">
-  <nav
-    class="w-full flex font-clash flex-col md:flex-row justify-between items-center md:px-20 lg:px-30 md:gap-10 gap-4 py-4 border-b sticky top-0 z-50 bg-black custom-nav-bar">
-    <!-- Logo -->
-    <div class="mt-2 cursor-pointer">
-      <img src="./images/Logo.svg" alt="Logo" class="w-28 sm:w-32 md:w-40" />
-    </div>
+  <body class="bg-black h-screen ">
+    <nav
+      class="w-full flex custom-nav-bar font-clash flex-col md:flex-row justify-between items-center md:px-20 lg:px-30 md:gap-10 gap-4 py-4 border-b sticky top-0 z-50 bg-black custom-nav-bar"
+    >
+      <!-- Logo -->
+      <div class="mt-2 cursor-pointer">
+        <img src="./images/Logo.svg" alt="Logo" class="w-28 sm:w-32 md:w-40" />
+      </div>
 
-    <!-- Mobile Menu Button -->
-    <div class="block md:hidden">
-      <button id="menu-btn" class="text-white focus:outline-none">
-        <img src="./images/menu.svg" alt="Menu Icon" class="w-6 h-6" />
-      </button>
-    </div>
-
-    <div id="nav-links"
-      class="hidden md:flex flex-col md:flex-row justify-between items-center md:gap-10 gap-6 w-full md:w-auto">
-      <div class="text-white flex gap-3 items-center">
-        <span class="text-base sm:text-lg md:text-xl mt-2 font-sans">How it works</span>
-        <button class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center">
-          <img class="w-3 sm:w-4" src="./images/Vector 64.svg" alt="How it works icon" />
-          <span>H</span>
+      <!-- Mobile Menu Button -->
+      <div class="block md:hidden">
+        <button id="menu-btn" class="text-white focus:outline-none">
+          <img src="./images/menu.svg" alt="Menu Icon" class="w-6 h-6" />
         </button>
       </div>
-      <div class="text-white flex gap-3 items-center">
-        <span class="text-base sm:text-lg md:text-xl mt- font-sans">Features</span>
-        <button class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center">
-          <img class="w-3 sm:w-4" src="./images/Vector 64.svg" alt="Features icon" />
-          <span>F</span>
-        </button>
+
+      <!-- Navigation Links -->
+      <div
+        id="nav-links"
+        class="hidden md:flex flex-col md:flex-row justify-between items-center md:gap-10 gap-6 w-full md:w-auto transition-all duration-300 ease-in-out"
+      >
+        <div class="text-white flex gap-3 items-center">
+          <span class="text-base sm:text-lg md:text-xl mt-2 font-sans"
+            >How it works</span
+          >
+          <button
+            class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center"
+          >
+            <img
+              class="w-3 sm:w-4"
+              src="./images/Vector 64.svg"
+              alt="How it works icon"
+            />
+            <span>H</span>
+          </button>
+        </div>
+        <div class="text-white flex gap-3 items-center">
+          <span class="text-base sm:text-lg md:text-xl mt-2 font-sans"
+            >Features</span
+          >
+          <button
+            class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center"
+          >
+            <img
+              class="w-3 sm:w-4"
+              src="./images/Vector 64.svg"
+              alt="Features icon"
+            />
+            <span>F</span>
+          </button>
+        </div>
+        <div class="text-white flex gap-3 items-center">
+          <span class="text-base sm:text-lg md:text-xl mt-2 font-sans"
+            >FAQ</span
+          >
+          <button
+            class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center"
+          >
+            <img
+              class="w-3 sm:w-4"
+              src="./images/Vector 64.svg"
+              alt="FAQ icon"
+            />
+            <span>H</span>
+          </button>
+        </div>
       </div>
-      <div class="text-white flex gap-3 items-center">
-        <span class="text-base sm:text-lg md:text-xl mt-2 font-sans">FAQ</span>
-        <button class="border-[#D6D6D6] bg-[#23252675] rounded-full gap-2 py-2 px-4 sm:px-5 flex items-center">
-          <img class="w-3 sm:w-4" src="./images/Vector 64.svg" alt="FAQ icon" />
-          <span>H</span>
-        </button>
-      </div>
-    </div>
 
-    <!-- Join Waitlist Button -->
-    <div class="w-full md:w-auto mt-4 md:mt-0">
-      <div class="border-[5px] px-5 sm:px-7 py-2 rounded-full bg-[#E83B04] text-center">
-        <button class="text-white rounded-full font-sans">Join waitlist</button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- title block -->
-
-  <section
-    class="flex bg-[url('./images/FrameVector.png')] b bg-no-repeat bg-cover h-screen flex-col items-center mt-[80px] px-4 sm:px-6 lg:px-10">
-    <div class="text-white text-center">
-      <img src="./images/Row.svg" alt="Beta Testers" class="mx-auto" />
-      <span class="text-base text-[#737373] font-sans">from our Beta Testers</span>
-    </div>
-
-    <div
-      class="text-[72px] leading-[94px] sm:text-[60px] lg:text-[72px] font-light tracking-[-0.02em] text-white font-clash">
-      Summarize Your Podcasts
-      <div class="text-center px-2 sm:px-5 font-clash">and Emails in Minutes</div>
-    </div>
-
-    <p
-      class="sm:text-[18px] leading-[35px] font-sans text-customGrey text-center w-full sm:w-[700px] mt-4 px-2 tracking-[0.5px]">
-      Get concise summaries of your favourite podcasts and important emails,
-      delivered to
-      <span class="font-sans">
-        you like a personalized morning digest, so you can focus on what
-        matters most.
-      </span>
-    </p>
-
-    <div class="flex flex-col items-center mt-8">
-      <form class="flex flex-col sm:flex-row items-center w-full">
-        <input type="email" placeholder="Your email"
-          class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
-
-        <div class="bg-white"></div>
-        <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
-          <button class="font-sans text-white rounded-full rounded-l-sm">
+      <!-- Join Waitlist Button -->
+      <div class="w-full md:w-auto mt-4 md:mt-0">
+        <div
+          class="border-[5px] px-5 sm:px-7 py-2 rounded-full bg-[#E83B04] text-center"
+        >
+          <button class="text-white rounded-full font-sans">
             Join waitlist
           </button>
         </div>
-      </form>
-      <!-- <p class="mt-4 text-xs text-gray-400">
-        By subscribing, you agree to our
-        <a href="#" class="underline text-gray-300">Terms and Conditions</a>.
-      </p> -->
-    </div>
-    <div class="overflow-x-auto w-full hide-scrollbar">
-      <section class="grid grid-flow-col auto-cols-[minmax(400px,_2fr)] gap-2 lg:gap-3 px-4 text-white"
-        style="grid-auto-columns: minmax(400px, 2fr); margin-top: 80px;">
-        <!-- Testimonial 1 -->
-        <div
-          class="bg-[#232526] text-customGrey h-auto w-[85vw] sm:w-[300px] lg:w-[400px] lg:ml-0 rounded-2xl p-4 sm:p-[22px] mt-0 sm:mt-2">
-          <p class="h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
-            Consequi.ai has revolutionised my mornings. I now start each day
-            informed without the hassle of scrolling through endless emails and
-            podcast episodes.
-          </p>
-          <div class="flex gap-3 mt-4 sm:mt-6">
-            <div class="mt-1"><img src="./images/female.svg" alt="" /></div>
-            <div class="flex flex-col">
-              <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">
-                Sara Davis
-              </p>
-              <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">
-                Gym Enthusiast
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div
-          class="font-sans text-customGrey bg-[#232526] h-auto w-[85vw] sm:w-[300px] lg:w-[400px] lg:ml-0 rounded-2xl p-4 sm:p-[22px] mt-0 sm:mt-2">
-          <p class="h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
-            The team took our vision and turned it into a powerful brand that
-            speaks to our core values.
-          </p>
-          <div class="flex gap-3 mt-4 sm:mt-6">
-            <div class="mt-1"><img src="./images/Div.png" alt="" /></div>
-            <div class="flex flex-col">
-              <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">
-                Mark Thompson
-              </p>
-              <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">
-                Front End Developer
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div
-          class="font-sans text-customGrey bg-[#232526] h-auto w-[85vw] sm:w-[300px] lg:w-[400px] lg:ml-0 rounded-2xl p-4 sm:p-[22px] mt-0 sm:mt-2">
-          <p class="h-[90px] text-customGrey text-[14px] sm:text-[15px] font-sans">
-            Consequi.ai has revolutionised my mornings. I now start each day
-            informed without the hassle of scrolling through endless emails and
-            podcast episodes.
-          </p>
-          <div class=" flex gap-3 mt-4 sm:mt-6">
-            <div class="mt-1"><img src="./images/female.svg" alt="" /></div>
-            <div class="flex flex-col">
-              <p class="font-sans text-customGrey font-normal text-[13px] sm:text-[14px] text-[#F2F2F2]">
-                Sara Davis
-              </p>
-              <p class="font-sans text-customGrey text-[11px] sm:text-[12px] text-[#AAAAAA]">
-                Gym Enthusiast
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 4 -->
-        <div
-          class="font-sans text-customGrey bg-[#232526] h-auto w-[85vw] sm:w-[300px] lg:w-[400px] lg:ml-0 rounded-2xl p-4 sm:p-[22px] mt-0 sm:mt-2">
-          <p class="h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px]">
-            The team took our vision and turned it into a powerful brand that
-            speaks to our core values.
-          </p>
-          <div class="flex gap-3 mt-4 sm:mt-6">
-            <div class="mt-1"><img src="./images/Div.png" alt="" /></div>
-            <div class="flex flex-col">
-              <p class="font-sans text-customGrey font-normal text-[13px] sm:text-[14px] text-[#F2F2F2]">
-                Mark Thompson
-              </p>
-              <p class="font-sans text-customGrey font-normal text-[11px] sm:text-[12px] text-[#AAAAAA]">
-                Front End Developer
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-  </section>
-
-  <!-- team card -->
-
-
-
-
-  <!-- Get started section -->
-  <section class="text-white mt-20 px-4">
-    <div class="flex flex-col items-center text-center">
-      <p class="font-normal text-4xl font-clash text-white leading-[60px] tracking-[1px]">
-        Get Started in 4 steps
-      </p>
-      <!-- <p class="mt-5 font-sans mb-4">How it Works</p> -->
-    </div>
-
-    <div class="flex flex-col lg:flex-row justify-center items-center mt-8 gap-8">
-      <img class="w-[336px] h-[638px] max-w-full" src="./images/Rectangle2.svg" alt="Phone illustration" />
-
-      <div class="flex flex-col w-full max-w-[571px] h-auto">
-        <div class="border-[#292929] h-[128px] border mt-4 rounded-2xl rotate-[5deg]">
-          <p class="px-5 mt-6 font-normal font-clash text-[14px] text-customGrey leading-[17px]">
-            STEP 1
-          </p>
-          <p class="px-5 font-dm-sans mt-3 font-medium text-2xl leading-[40px] tracking-[1px] text-white">
-            Connect your Podcasts and Email
-          </p>
-        </div>
-        <div class="border-[#292929] h-[128px] border mt-6 rounded-2xl">
-          <p class="px-5 mt-6 font-normal font-clash text-[14px] text-customGrey">
-            STEP 2
-          </p>
-          <p class="px-5 font-dm-sans mt-3 font-medium text-2xl leading-[40px] tracking-[1px] text-white">
-            Select your preference(s)
-          </p>
-        </div>
-        <div class="border-[#292929] h-[128px] border mt-6 rounded-2xl">
-          <p class="px-5 mt-6 font-normal font-clash text-[14px] text-customGrey">
-            STEP 3
-          </p>
-          <p class="px-5 font-dm-sans mt-3 font-medium text-2xl leading-[40px] tracking-[1px] text-white">
-            Receive your Summaries
-          </p>
-        </div>
-        <div class="border-[#292929] h-[128px] border mt-6 rounded-2xl -rotate-[5deg]">
-          <p class="px-5 mt-6 font-clash font-normal text-[14px] text-customGrey">
-            STEP 4
-          </p>
-          <p class="px-5 font-dm-sans mt-3 font-medium text-2xl leading-[40px] tracking-[1px] text-white">
-            Stay Informed, Stay Ahead
-          </p>
-        </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- why we Love section -->
+    <!-- title block -->
 
-  <section class="px-4 lg:px-10 mt-28">
-    <div class="flex flex-col items-center mt-16 text-center">
-      <p class="font-normal font-clash text-4xl text-[#F7F7F7] leading-[60px] tracking-[1px]">
-        Why You'll Love Consequi.ai
-      </p>
-      <p class="text-[#D6D6D6] font-sans mt-10 text-[20px] mb-12 leading-[30px]">
-        We're Here Just for You
-      </p>
-    </div>
+    <section
+  class="flex bg-[url('./images/FrameVector.png')] bg-no-repeat bg-cover flex-col items-center mt-[40px] sm:mt-[80px] px-4 sm:px-6 lg:px-10"
+>
+  <div class="text-white text-center">
+    <img src="./images/Row.svg" alt="Beta Testers" class="mx-auto" />
+    <span class="text-base text-[#737373] font-sans">from our Beta Testers</span>
+  </div>
 
-    <div class="text-white flex flex-col lg:flex-row justify-between gap-8 mt-16 mb-16">
-      <div class="w-full lg:w-[374px] h-[282px] rounded-2xl border-l-2 p-10">
-        <div>
-          <img class="w-[24px] h-[24px]" src="./images/dashboard-browsing.svg" alt="Simplicity Icon" />
-        </div>
-        <p class="mt-3 font-normal text-xl text-[#FFFFFF] font-clash leading-[24px]">
-          Simplicity
-        </p>
-        <div class="font-normal font-sans h-[125px] text-lg text-customGrey leading-[23px] text-18px">
-          With so much information (emails, podcasts, etc.) being generated
-          daily, consequi.ai cuts through the noise and gives you the most
-          important points at a glance, reducing cognitive overload.
-        </div>
+  <!-- Main Heading -->
+  <div
+    class="text-[42px] leading-[50px] lg:leading-[100px] sm:text-[60px] lg:text-[72px] font-light tracking-[-0.02em] text-white font-clash text-center"
+  >
+    Summarize Your Podcasts
+    <div class="text-center px-2 sm:px-5 font-clash">and Emails in Minutes</div>
+  </div>
+
+  <!-- Subtext -->
+  <p
+    class="sm:text-[18px] leading-[35px] font-sans text-customGrey text-center w-full sm:w-[700px] mt-4 px-2 tracking-[0.5px]"
+  >
+    Get concise summaries of your favourite podcasts and important emails,
+    delivered to
+    <span class="font-sans">you like a personalized morning digest, so you can focus on what matters most.</span>
+  </p>
+
+  <!-- Form Section -->
+  <div class="flex flex-col items-center mt-8 w-full">
+    <form class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto">
+      <input
+        type="email"
+        placeholder="Your email"
+        class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+      />
+
+      <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
+        <button class="font-sans text-white rounded-full">Join waitlist</button>
       </div>
+    </form>
+  </div>
+</section>
 
-      <div class="w-full lg:w-[374px] h-[282px] rounded-2xl border-l-2 p-10">
-        <div>
-          <img class="w-[24px] h-[24px]" src="./images/dashboard-square-02.svg" alt="Content Fatigue Icon" />
-        </div>
-        <p class="mt-3 font-normal text-xl text-[#FFFFFF] font-clash leading-[24px]">
-          Reduces Content Fatigue
-        </p>
-        <div class="font-normal font-sans h-[125px] text-lg text-customGrey leading-[23px] text-18px">
-          Instead of engaging with lengthy content that might not be entirely
-          relevant, you can focus only on key takeaways.
-        </div>
-      </div>
-
-      <div class="w-full lg:w-[374px] h-[282px] rounded-2xl border-l-2 p-10">
-        <div>
-          <img class="w-[24px] h-[24px]" src="./images/circle-lock-01.svg" alt="Data Security Icon" />
-        </div>
-        <p class="mt-3 font-normal text-xl text-[#FFFFFF] font-clash leading-[24px]">
-          Data Security
-        </p>
-        <div class="font-normal font-sans h-[125px] text-lg text-customGrey leading-[23px] text-18px">
-          Because your emails and podcasts contain personal and sensitive
-          information, we've implemented industry-leading security measures to
-          ensure your data is always protected.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-
-  <section class="mt-24">
-    <div class="flex flex-col items-center">
-      <p class="font-normal text-4xl font-clash text-white text-center">
-        Frequently Asked Questions
-      </p>
-      <p class="mt-6 font-normal text-xl text-[#D6D6D6] font-dm-sans text-center">
-        Find answers to common questions about our folder management app.
-      </p>
-      <div class="w-full max-w-3xl mt-10 mb-12">
-        <!-- FAQ Item 1 -->
-        <div class="faq-item hover:bg-[#29292926] rounded-xl p-4 mb-5">
-          <div class="flex justify-between">
-            <p class="font-medium text-xl text-[#F7F7F7]">
-              How does Consequi.Ai work with my Email?
-            </p>
-            <div class="toggle-icon cursor-pointer">
-              <img class="icon" src="./images/Icon wrap plus.svg" alt="Icon" />
-            </div>
-          </div>
-          <div class="answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <p class="text-[#94969C] font-dm-sans text-[16px] mt-2">
-              We securely sync with your email provider and summarize only the
-              emails you grant us access to.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 2 -->
-        <div class="faq-item hover:bg-[#29292926] rounded-xl p-4 mb-5">
-          <div class="flex justify-between">
-            <p class="font-medium text-xl font-clash text-[#F7F7F7]">
-              Is my data safe?
-            </p>
-            <div class="toggle-icon cursor-pointer">
-              <img class="icon" src="./images/Icon wrap plus.svg" alt="Icon" />
-            </div>
-          </div>
-          <div class="answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <p class="text-[#94969C] font-dm-sans text-[16px] mt-2">
-              Yes, we prioritize security and encryption for all your data.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 3 -->
-        <div class="faq-item hover:bg-[#29292926] rounded-xl p-4 mb-5">
-          <div class="flex justify-between">
-            <p class="font-medium text-xl font-clash text-[#F7F7F7]">
-              Can I choose which podcasts to summarize?
-            </p>
-            <div class="toggle-icon cursor-pointer">
-              <img class="icon" src="./images/Icon wrap plus.svg" alt="Icon" />
-            </div>
-          </div>
-          <div class="answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <p class="text-[#94969C] font-dm-sans text-[16px] mt-2">
-              Yes, you can choose which podcasts to summarize by selecting the
-              specific episodes.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Ready section -->
-
-  <section class="text-white mt-24">
-    <div class="flex flex-col items-center text-center">
-      <p class="font-normal text-[56px] font-clash sm:text-[71px] w-full max-w-2xl">
-
-        Ready to Simplify your Day?
-      </p>
-
-      <p class="font-normal font-dm-sans text-lg sm:text-xl w-full max-w-2xl">
-        Join hundreds of professionals who are already making their days more
-        productive.
-      </p>
-    </div>
-
-    <div class="flex justify-center flex-col items-center mt-8">
-      <form class="flex flex-col sm:flex-row items-center gap-2">
-
-        <input type="email" placeholder="Your email"
-          class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
-
-        <!-- Button -->
-        <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04]">
-          <button class="text-white rounded-full">Join waitlist</button>
-        </div>
-      </form>
-
-      <p class="mt-4 text-xs text-gray-400 text-center">
-        By subscribing, you agree to our
-        <a href="#" class="underline text-gray-300">Terms and Conditions</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- footer -->
-
-  <footer class="px-4 sm:px-10 lg:px-40 bg-[#191A1B] mt-28 py-4 flex justify-between items-center">
-    <div>
-      <img src="./images/logo2.svg" alt="Logo" class="h-8" />
-
-    </div>
-    <p class="text-[#FFFFFF] font-normal text-center text-[14px] sm:text-[16px]">
-      Copyright 2024. All Rights Reserved
+<!-- Testimonials Section -->
+<section class="grid mt-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 text-white">
+  <!-- Testimonial 1 -->
+  <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
+    <p class="min-h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
+      Consequi.ai has revolutionised my mornings. I now start each day informed without the hassle of scrolling through endless emails and podcast episodes.
     </p>
-  </footer>
+    <div class="flex gap-3 mt-4 sm:mt-6">
+      <div class="mt-1">
+        <img src="./images/female.svg" alt="Profile picture" />
+      </div>
+      <div class="flex flex-col">
+        <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Sara Davis</p>
+        <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Gym Enthusiast</p>
+      </div>
+    </div>
+  </div>
 
-  <script>
+  <!-- Testimonial 2 -->
+  <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
+    <p class="min-h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
+      The team took our vision and turned it into a powerful brand that speaks to our core values.
+    </p>
+    <div class="flex gap-3 mt-4 sm:mt-6">
+      <div class="mt-1">
+        <img src="./images/Div.png" alt="Profile picture" />
+      </div>
+      <div class="flex flex-col">
+        <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Mark Thompson</p>
+        <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Front End Developer</p>
+      </div>
+    </div>
+  </div>
 
-    const faqItems = document.querySelectorAll(".faq-item");
+  <!-- Testimonial 3 -->
+  <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
+    <p class="min-h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px]">
+      Consequi.ai has revolutionised my mornings. I now start each day informed without the hassle of scrolling through endless emails and podcast episodes.
+    </p>
+    <div class="flex gap-3 mt-4 sm:mt-6">
+      <div class="mt-1">
+        <img src="./images/female.svg" alt="Profile picture" />
+      </div>
+      <div class="flex flex-col">
+        <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Sara Davis</p>
+        <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Gym Enthusiast</p>
+      </div>
+    </div>
+  </div>
 
-    // Function to close all FAQ items
-    function closeAllFaqs() {
+  <!-- Testimonial 4 -->
+  <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
+    <p class="min-h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px]">
+      The team took our vision and turned it into a powerful brand that speaks to our core values.
+    </p>
+    <div class="flex gap-3 mt-4 sm:mt-6">
+      <div class="mt-1">
+        <img src="./images/Div.png" alt="Profile picture" />
+      </div>
+      <div class="flex flex-col">
+        <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Mark Thompson</p>
+        <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Front End Developer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Get started section -->
+    <section class="text-white mt-20 px-4">
+      <div class="flex flex-col items-center text-center">
+        <p
+          class="font-normal text-4xl font-clash text-white leading-[60px] tracking-[1px]"
+        >
+          Get Started in 4 steps
+        </p>
+        <!-- <p class="mt-5 font-sans mb-4">How it Works</p> -->
+      </div>
+
+      <div
+        class="flex flex-col lg:flex-row justify-center items-center mt-8 gap-8"
+      >
+        <img
+          class="w-[336px] h-[638px] max-w-full"
+          src="./images/Rectangle2.svg"
+          alt="Phone illustration"
+        />
+
+        <div class="flex flex-col w-full max-w-[571px] h-auto">
+          <div
+            class="border-[#292929] h-[128px] border mt-4 rounded-2xl rotate-[5deg]"
+          >
+            <p
+              class="px-5 mt-4 font-normal font-clash text-[14px] text-customGrey leading-[17px]"
+            >
+              STEP 1
+            </p>
+            <p
+              class="px-5 font-dm-sans mt-3 font-medium text-2xl leading-[40px] tracking-[1px] text-white"
+            >
+              Connect your Podcasts and Email
+            </p>
+          </div>
+          <div class="border-[#292929] h-[128px] border mt-5 rounded-2xl">
+            <p
+              class="px-5 mt-6 font-normal font-clash text-[14px] text-customGrey"
+            >
+              STEP 2
+            </p>
+            <p
+              class="px-5 font-dm-sans mt-3 font-medium text-2xl leading-[40px] tracking-[1px] text-white"
+            >
+              Select your preference(s)
+            </p>
+          </div>
+          <div class="border-[#292929] -rotate-[5deg] h-[128px] border mt-5 rounded-2xl">
+            <p
+              class="px-5 mt-6 font-normal font-clash text-[14px] text-customGrey"
+            >
+              STEP 3
+            </p>
+            <p
+              class="px-5 font-dm-sans mt-3 font-medium text-2xl leading-[40px] tracking-[1px] text-white"
+            >
+              Receive your Summaries
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- why we Love section -->
+
+    <section class="px-4 lg:px-10 mt-28">
+      <div class="flex flex-col items-center mt-16 text-center">
+        <p
+          class="font-normal font-clash text-4xl text-[#F7F7F7] leading-[60px] tracking-[1px]"
+        >
+          Why You'll Love Consequi.ai
+        </p>
+        <p
+          class="text-[#D6D6D6] font-sans mt-10 text-[20px] mb-12 leading-[30px]"
+        >
+          We're Here Just for You
+        </p>
+      </div>
+
+      <div
+        class="text-white flex flex-col lg:flex-row justify-between gap-8 mt-16 mb-16"
+      >
+        <div class="w-full lg:w-[374px] h-[282px] rounded-2xl border-l-2 p-10">
+          <div>
+            <img
+              class="w-[24px] h-[24px]"
+              src="./images/dashboard-browsing.svg"
+              alt="Simplicity Icon"
+            />
+          </div>
+          <p
+            class="mt-3 font-normal text-xl text-[#FFFFFF] font-clash leading-[24px]"
+          >
+            Simplicity
+          </p>
+          <div
+            class="font-normal font-sans h-[125px] text-lg text-customGrey leading-[23px] text-18px"
+          >
+            With so much information (emails, podcasts, etc.) being generated
+            daily, consequi.ai cuts through the noise and gives you the most
+            important points at a glance, reducing cognitive overload.
+          </div>
+        </div>
+
+        <div class="w-full lg:w-[374px] h-[282px] rounded-2xl border-l-2 p-10">
+          <div>
+            <img
+              class="w-[24px] h-[24px]"
+              src="./images/dashboard-square-02.svg"
+              alt="Content Fatigue Icon"
+            />
+          </div>
+          <p
+            class="mt-3 font-normal text-xl text-[#FFFFFF] font-clash leading-[24px]"
+          >
+            Reduces Content Fatigue
+          </p>
+          <div
+            class="font-normal font-sans h-[125px] text-lg text-customGrey leading-[23px] text-18px"
+          >
+            Instead of engaging with lengthy content that might not be entirely
+            relevant, you can focus only on key takeaways.
+          </div>
+        </div>
+
+        <div class="w-full lg:w-[374px] h-[282px] rounded-2xl border-l-2 p-10">
+          <div>
+            <img
+              class="w-[24px] h-[24px]"
+              src="./images/circle-lock-01.svg"
+              alt="Data Security Icon"
+            />
+          </div>
+          <p
+            class="mt-3 font-normal text-xl text-[#FFFFFF] font-clash leading-[24px]"
+          >
+            Data Security
+          </p>
+          <div
+            class="font-normal font-sans h-[125px] text-lg text-customGrey leading-[23px] text-18px"
+          >
+            Because your emails and podcasts contain personal and sensitive
+            information, we've implemented industry-leading security measures to
+            ensure your data is always protected.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+
+    <section class="mt-24">
+      <div class="flex flex-col items-center">
+        <p class="font-normal text-4xl font-clash text-white text-center">
+          Frequently Asked Questions
+        </p>
+        <p
+          class="mt-6 font-normal text-xl text-[#D6D6D6] font-dm-sans text-center"
+        >
+          Find answers to common questions about our folder management app.
+        </p>
+        <div class="w-full max-w-3xl mt-10 mb-12">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item hover:bg-[#29292926] rounded-xl p-4 mb-5">
+            <div class="flex justify-between">
+              <p class="font-medium text-xl text-[#F7F7F7]">
+                How does Consequi.Ai work with my Email?
+              </p>
+              <div class="toggle-icon cursor-pointer">
+                <img
+                  class="icon"
+                  src="./images/Icon wrap plus.svg"
+                  alt="Icon"
+                />
+              </div>
+            </div>
+            <div
+              class="answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <p class="text-[#94969C] font-dm-sans text-[16px] mt-2">
+                We securely sync with your email provider and summarize only the
+                emails you grant us access to.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item hover:bg-[#29292926] rounded-xl p-4 mb-5">
+            <div class="flex justify-between">
+              <p class="font-medium text-xl font-clash text-[#F7F7F7]">
+                Is my data safe?
+              </p>
+              <div class="toggle-icon cursor-pointer">
+                <img
+                  class="icon"
+                  src="./images/Icon wrap plus.svg"
+                  alt="Icon"
+                />
+              </div>
+            </div>
+            <div
+              class="answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <p class="text-[#94969C] font-dm-sans text-[16px] mt-2">
+                Yes, we prioritize security and encryption for all your data.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item hover:bg-[#29292926] rounded-xl p-4 mb-5">
+            <div class="flex justify-between">
+              <p class="font-medium text-xl font-clash text-[#F7F7F7]">
+                Can I choose which podcasts to summarize?
+              </p>
+              <div class="toggle-icon cursor-pointer">
+                <img
+                  class="icon"
+                  src="./images/Icon wrap plus.svg"
+                  alt="Icon"
+                />
+              </div>
+            </div>
+            <div
+              class="answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <p class="text-[#94969C] font-dm-sans text-[16px] mt-2">
+                Yes, you can choose which podcasts to summarize by selecting the
+                specific episodes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ready section -->
+
+    <section class="text-white mt-24">
+      <div class="flex flex-col items-center text-center">
+        <p
+          class="font-normal text-[56px] font-clash sm:text-[71px] w-full max-w-2xl"
+        >
+          Ready to Simplify your Day?
+        </p>
+
+        <p class="font-normal font-dm-sans text-lg sm:text-xl w-full max-w-2xl">
+          Join hundreds of professionals who are already making their days more
+          productive.
+        </p>
+      </div>
+
+      <div class="flex justify-center flex-col items-center mt-8">
+        <form class="flex flex-col sm:flex-row items-center gap-2">
+          <input
+            type="email"
+            placeholder="Your email"
+            class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+
+          <!-- Button -->
+          <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04]">
+            <button class="text-white rounded-full">Join waitlist</button>
+          </div>
+        </form>
+
+        <p class="mt-4 text-xs text-gray-400 text-center">
+          By subscribing, you agree to our
+          <a href="#" class="underline text-gray-300">Terms and Conditions</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer
+      class="px-4 sm:px-10 lg:px-40 bg-[#191A1B] mt-28 py-4 flex justify-between items-center"
+    >
+      <div>
+        <img src="./images/logo2.svg" alt="Logo" class="h-8" />
+      </div>
+      <p
+        class="text-[#FFFFFF] font-normal text-center text-[14px] sm:text-[16px]"
+      >
+        Copyright 2024. All Rights Reserved
+      </p>
+    </footer>
+
+    <script>
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      // Function to close all FAQ items
+      function closeAllFaqs() {
+        faqItems.forEach((item) => {
+          const answer = item.querySelector(".answer");
+          const icon = item.querySelector(".icon");
+
+          // Collapse the answer
+          answer.style.maxHeight = "0"; // Close with height 0
+          icon.src = "./images/Icon wrap plus.svg"; // Reset to plus icon
+        });
+      }
+
+      // Loop through each FAQ item and add a click event listener
       faqItems.forEach((item) => {
+        const toggleIcon = item.querySelector(".toggle-icon img");
         const answer = item.querySelector(".answer");
-        const icon = item.querySelector(".icon");
 
-        // Collapse the answer
-        answer.style.maxHeight = "0"; // Close with height 0
-        icon.src = "./images/Icon wrap plus.svg"; // Reset to plus icon
+        item.addEventListener("click", function () {
+          const isCurrentlyOpen =
+            answer.style.maxHeight && answer.style.maxHeight !== "0px";
+
+          // Close all FAQ items
+          closeAllFaqs();
+
+          if (!isCurrentlyOpen) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            toggleIcon.src = "./images/Icon wrap.svg";
+          }
+        });
       });
-    }
-
-    // Loop through each FAQ item and add a click event listener
-    faqItems.forEach((item) => {
-      const toggleIcon = item.querySelector(".toggle-icon img");
-      const answer = item.querySelector(".answer");
-
-      item.addEventListener("click", function () {
-        const isCurrentlyOpen =
-          answer.style.maxHeight && answer.style.maxHeight !== "0px";
-
-        // Close all FAQ items
-        closeAllFaqs();
-
-
-        if (!isCurrentlyOpen) {
-          answer.style.maxHeight = answer.scrollHeight + "px";
-          toggleIcon.src = "./images/Icon wrap.svg";
-        }
-      });
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
