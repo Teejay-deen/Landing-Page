@@ -94,11 +94,13 @@
     </button>
 
     <!-- Join Waitlist Button (Hidden on mobile, shown on desktop) -->
-    <div class="hidden md:block border-[5px] px-5 sm:px-7 py-2 rounded-full bg-[#E83B04] text-center">
-      <button class="text-white rounded-full font-sans">
-        Join waitlist
-      </button>
-    </div>
+    <!-- <div class="hidden md:block border-[5px] px-5 sm:px-7 py-2 rounded-full bg-[#E83B04] text-center"> -->
+      <!-- <a href="#waitlist-input">
+        <button class="text-white rounded-full font-sans">
+          Join waitlist
+        </button>
+      </a> -->
+    <!-- </div> -->
   </nav>
 
 
@@ -131,11 +133,11 @@
     <div class="flex flex-col items-center mt-8 w-full">
       <form name="waitlist" method="POST" netlify
         class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto" id="waitlist-form">
-        <input required name="email" type="email" placeholder="Your email"
+        <input id="waitlist-input" required name="email" type="email" placeholder="Your email"
           class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
 
         <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
-          <button class="font-sans text-white rounded-full" type="submit">Join waitlist</button>
+          <button class="font-sans text-white rounded-full submit-button" type="submit">Join waitlist</button>
         </div>
       </form>
     </div>
@@ -420,7 +422,7 @@
           class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
 
         <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
-          <button class="font-sans text-white rounded-full" type="submit">Join waitlist</button>
+          <button class="font-sans text-white rounded-full submit-button" type="submit">Join waitlist</button>
         </div>
       </form>
     </div>
@@ -485,9 +487,14 @@
 
     const handleSubmit = (event) => {
       event.preventDefault();
-
+      
       const myForm = event.target;
       const formData = new FormData(myForm);
+
+      const submitButton = myForm.querySelector(".submit-button");
+      submitButton.disabled = true;
+      submitButton.textContent = "Joining...";
+
 
       fetch("/", {
         method: "POST",
@@ -495,12 +502,16 @@
         body: new URLSearchParams(formData).toString(),
       })
         .then(() => alert('Thanks for joining the waitlist! 🎉 you will receive updates via email soon'))
-        .catch((error) => alert(error));
+        .catch((error) => alert(error))
+        .finally(() => {
+          submitButton.disabled = false;
+          submitButton.textContent = "Join waitlist";
+        });
     };
 
-    document
-      .querySelector("form")
-      .addEventListener("submit", handleSubmit);
+    document.querySelectorAll("form").forEach((form) => {
+      form.addEventListener("submit", handleSubmit);
+    });
   </script>
 </body>
 
