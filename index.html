@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Synchrono io</title>
+  <title>Synchrono</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -131,7 +131,7 @@
     <div class="flex flex-col items-center mt-8 w-full">
       <form name="waitlist" method="POST" netlify
         class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto" id="waitlist-form">
-        <input name="email" type="email" placeholder="Your email"
+        <input required name="email" type="email" placeholder="Your email"
           class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
 
         <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
@@ -416,7 +416,7 @@
     <div class="flex flex-col items-center mt-8 w-full p-5">
       <form class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto" id="waitlist-form"
         name="waitlist" method="POST" netlify>
-        <input name="email" type="email" placeholder="Your email"
+        <input required name="email" type="email" placeholder="Your email"
           class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
 
         <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
@@ -483,27 +483,24 @@
       });
     });
 
-    document.getElementById('waitlist-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent default form submission
-      debugger
-      const formData = new FormData(this);
+    const handleSubmit = (event) => {
+      event.preventDefault();
 
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
       })
-        .then(function (response) {
-          if (response.ok) {
-            alert('Thanks for joining the waitlist! 🎉');
-          } else {
-            alert('Oops! Something went wrong.');
-          }
-        })
-        .catch(function (error) {
-          console.error('Form submission error:', error);
-        });
-    });
+        .then(() => alert('Thanks for joining the waitlist! 🎉 you will receive updates via email soon'))
+        .catch((error) => alert(error));
+    };
+
+    document
+      .querySelector("form")
+      .addEventListener("submit", handleSubmit);
   </script>
 </body>
 
