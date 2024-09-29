@@ -479,13 +479,16 @@
   </footer>
 
   <script>
-    // Toggle Menu
     const menuBtn = document.getElementById("menu-btn");
     const navLinks = document.getElementById("nav-links");
 
-    menuBtn.addEventListener("click", function () {
+    const toggleMenu = () => {
       navLinks.classList.toggle("hidden");
       navLinks.classList.toggle("flex");
+    }
+
+    menuBtn.addEventListener("click", function () {
+      toggleMenu()
     });
 
     // Select all FAQ items
@@ -566,6 +569,8 @@
         targetElement.scrollIntoView({ behavior: 'smooth' });
 
         targetElement.classList.add('focus-animation');
+
+        toggleMenu();
 
         setTimeout(() => {
           targetElement.classList.remove('focus-animation');
