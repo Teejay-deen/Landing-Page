@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing Page</title>
+  <title>Synchrono io</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -14,6 +14,12 @@
       top: 0;
       z-index: 1000;
       /* Ensure it stays above other elements */
+    }
+
+    .answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
     }
 
     @font-face {
@@ -109,7 +115,7 @@
     <!-- Main Heading -->
     <div
       class="text-[42px] leading-[50px] lg:leading-[100px] sm:text-[60px] lg:text-[72px] font-light tracking-[-0.02em] text-white font-clash text-center">
-      Summarize Your Podcasts
+      Audio Summaries of Your Favorite Podcasts
       <div class="text-center px-2 sm:px-5 font-clash">and Emails in Minutes</div>
     </div>
 
@@ -138,66 +144,74 @@
   <section class="grid mt-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 text-white bg-[#0F0F0F]">
     <!-- Testimonial 1 -->
     <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
-      <p class="min-h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
-        Consequi.ai has revolutionised my mornings. I now start each day informed without the hassle of scrolling
-        through endless emails and podcast episodes.
+      <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
+        An absolute game-changer! Not only does it summarize my emails and podcasts flawlessly, but it also delivers
+        everything in audio format! It’s like having a personal assistant read out my morning updates. Now, I can stay
+        productive even while driving or exercising. Highly recommend this app to anyone looking to save time!
       </p>
       <div class="flex gap-3 mt-4 sm:mt-6">
-        <div class="mt-1">
-          <img src="./images/female.svg" alt="Profile picture" />
+        <div class="mt-1 w-[32px] h-[32px]">
+          <img class="rounded-[10px]" src="./images/amanda-j.jpg" alt="Profile picture" />
         </div>
         <div class="flex flex-col">
-          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Sara Davis</p>
-          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Gym Enthusiast</p>
+          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Amanda J</p>
+          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Marketing executive</p>
         </div>
       </div>
     </div>
 
     <!-- Testimonial 2 -->
     <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
-      <p class="min-h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
-        The team took our vision and turned it into a powerful brand that speaks to our core values.
+      <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
+        Efficiency redefined! This app has completely transformed the way I manage information. The summaries are
+        concise, and it allows me to listen while I multitask. I feel informed without the need to sit
+        down and read through tons of content. I can catch up on important updates while I
+        code. Perfect for busy professionals!
       </p>
       <div class="flex gap-3 mt-4 sm:mt-6">
-        <div class="mt-1">
-          <img src="./images/Div.png" alt="Profile picture" />
+        <div class="mt-1 w-[32px] h-[32px]">
+          <img class="rounded-[10px]" src="./images/david-m.jpg" alt="Profile picture" />
         </div>
         <div class="flex flex-col">
-          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Mark Thompson</p>
-          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Front End Developer</p>
+          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">David M</p>
+          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Software Engineer</p>
         </div>
       </div>
     </div>
 
     <!-- Testimonial 3 -->
     <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
-      <p class="min-h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px]">
-        Consequi.ai has revolutionised my mornings. I now start each day informed without the hassle of scrolling
-        through endless emails and podcast episodes.
+      <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px]">
+        I love how I can listen to summarized podcasts and emails during my gym sessions. It allows me to stay informed
+        without missing a beat while I'm focusing on my fitness goals. The audio format fits seamlessly into my day,
+        whether I’m lifting weights or doing cardio. If you're a gym enthusiast like me, this app is a total
+        game-changer!
       </p>
       <div class="flex gap-3 mt-4 sm:mt-6">
-        <div class="mt-1">
-          <img src="./images/female.svg" alt="Profile picture" />
+        <div class="mt-1 w-[32px] h-[32px]">
+          <img class="rounded-[10px]" src="./images/marcu-davis.jpg" alt="Profile picture" />
         </div>
         <div class="flex flex-col">
-          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Sara Davis</p>
-          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Gym Enthusiast</p>
+          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Marcus Davis</p>
+          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Fitness Enthusiast</p>
         </div>
       </div>
     </div>
 
     <!-- Testimonial 4 -->
     <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
-      <p class="min-h-[90px] font-sans text-customGrey text-[14px] sm:text-[15px]">
-        The team took our vision and turned it into a powerful brand that speaks to our core values.
+      <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px]">
+        I love how this app gives me audio summaries of my emails and podcasts. It’s like having
+        my own news anchor keeping me updated on the go. It’s precise, clear, and incredibly useful for anyone juggling
+        multiple tasks. As a startup founder, this app has been crucial to staying on top of everything!
       </p>
       <div class="flex gap-3 mt-4 sm:mt-6">
-        <div class="mt-1">
-          <img src="./images/Div.png" alt="Profile picture" />
+        <div class="mt-1 w-[32px] h-[32px]">
+          <img class="rounded-[10px]" src="./images/david-zhang.jpg" alt="Profile picture" />
         </div>
         <div class="flex flex-col">
-          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Mark Thompson</p>
-          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Front End Developer</p>
+          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Peter Zhang</p>
+          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Founder</p>
         </div>
       </div>
     </div>
@@ -258,7 +272,7 @@
   <section id="features" class="px-4 lg:px-10 mt-28">
     <div class="flex flex-col items-center mt-16 sm:mt-0 text-center">
       <p class="font-normal font-clash text-4xl text-[#F7F7F7] leading-[60px] tracking-[-0.02em]">
-        Why You'll Love Consequi.ai
+        Why You'll Love Synchrono.io
       </p>
       <p class="text-[#D6D6D6] font-sans mt-10 text-[20px] mb-12 leading-[30px]">
         We're Here Just for You
@@ -324,7 +338,7 @@
         <div class="faq-item hover:bg-[#29292926] rounded-xl p-4 mb-5">
           <div class="flex justify-between">
             <p class="font-medium text-xl text-[#F7F7F7] leading-[28px] text-white">
-              How does Consequi.Ai work with my Email?
+              How does Synchrono.io work with my email?
             </p>
             <div class="toggle-icon cursor-pointer">
               <img class="icon" src="./images/Icon wrap plus.svg" alt="Icon" />
@@ -414,7 +428,7 @@
 
   <footer class="px-4 sm:px-10 lg:px-40 bg-[#191A1B] mt-28 py-4 flex justify-between items-center">
     <div>
-      <img src="./images/logo2.svg" alt="Logo" class="h-8" />
+      <img src="./images/Logo.svg" alt="Logo" class="h-8" />
     </div>
     <p class="text-[#FFFFFF] font-normal text-center text-[14px] sm:text-[16px]">
       Copyright 2024. All Rights Reserved
@@ -430,6 +444,7 @@
       navLinks.classList.toggle("hidden");
       navLinks.classList.toggle("flex");
     });
+
   </script>
 </body>
 
