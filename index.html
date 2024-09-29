@@ -9,11 +9,31 @@
   <link rel="icon" href="/images/Logo.svg" type="image/png">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Animation for focus */
+    .focus-animation {
+      animation: highlight 1s ease-in-out;
+    }
+
+    @keyframes highlight {
+      0% {
+        background-color: rgba(227, 101, 62, 0.8);
+        ;
+      }
+
+      100% {
+        background-color: transparent;
+      }
+    }
+
     .custom-nav-bar {
       border-bottom-color: #333;
-      position: sticky;
       top: 0;
       z-index: 1000;
+      position: fixed;
       /* Ensure it stays above other elements */
     }
 
@@ -55,13 +75,15 @@
   </script>
 </head>
 
-<body class="bg-[#0F0F0F] h-screen ">
+<body class="bg-[#0F0F0F] h-screen scroll-smooth">
   <nav
-    class="bg-[#0F0F0F] w-full flex custom-nav-bar font-clash items-center justify-between px-4 md:px-20 lg:px-30 py-4 border-b sticky top-0 z-50">
+    class="bg-[#0F0F0F] w-full flex custom-nav-bar font-clash items-center justify-between px-4 md:px-20 lg:px-30 py-4 border-b top-0 z-50">
 
     <!-- Logo (Left aligned) -->
     <div class="mt-2 cursor-pointer flex items-center">
-      <img src="./images/Logo.svg" alt="Logo" class="w-28 sm:w-32 md:w-40" />
+      <a href="#landing">
+        <img src="./images/Logo.svg" alt="Logo" class="w-28 sm:w-32 md:w-40" />
+      </a>
     </div>
 
     <!-- Navigation Links (Centralized) -->
@@ -108,8 +130,8 @@
 
   <!-- Main Content (rest of the page remains the same) -->
 
-  <section style="background: #0F0F0F;"
-    class="flex bg-[url('./images/FrameVector.png')] bg-no-repeat bg-cover flex-col items-center mt-[40px] sm:mt-[80px] px-4 sm:px-6 lg:px-10">
+  <section id="landing" style="background: #0F0F0F;"
+    class="flex bg-[url('./images/FrameVector.png')] bg-no-repeat bg-cover flex-col items-center pt-[150px] px-4 sm:px-6 lg:px-10">
     <div class="text-white text-center">
       <img src="./images/Row.svg" alt="Beta Testers" class="mx-auto" />
       <span class="text-base text-[#737373] font-sans">from our Beta Testers</span>
@@ -118,7 +140,7 @@
     <!-- Main Heading -->
     <div
       class="text-[42px] leading-[50px] lg:leading-[100px] sm:text-[60px] lg:text-[72px] font-light tracking-[-0.02em] text-white font-clash text-center">
-      Audio Summaries of Your Favorite Podcasts
+      Audio Summaries of Your Podcasts
       <div class="text-center px-2 sm:px-5 font-clash">and Emails in Minutes</div>
     </div>
 
@@ -142,80 +164,81 @@
         </div>
       </form>
     </div>
-  </section>
+    <!-- </section> -->
 
-  <!-- Testimonials Section -->
-  <section class="grid mt-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 text-white bg-[#0F0F0F]">
-    <!-- Testimonial 1 -->
-    <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
-      <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
-        An absolute game-changer! Not only does it summarize my emails and podcasts flawlessly, but it also delivers
-        everything in audio format! It’s like having a personal assistant read out my morning updates. Now, I can stay
-        productive even while driving or exercising. Highly recommend this app to anyone looking to save time!
-      </p>
-      <div class="flex gap-3 mt-4 sm:mt-6">
-        <div class="mt-1 w-[32px] h-[32px]">
-          <img class="rounded-[10px]" src="./images/amanda-j.jpg" alt="Profile picture" />
-        </div>
-        <div class="flex flex-col">
-          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Amanda J</p>
-          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Marketing executive</p>
+    <!-- Testimonials Section -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 text-white pt-[70px]">
+      <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
+        <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
+          An absolute game-changer! Not only does it summarize my emails and podcasts flawlessly, but it also delivers
+          everything in audio format! It’s like having a personal assistant read out my morning updates. Now, I can stay
+          productive even while driving or exercising. Highly recommend this app to anyone looking to save time!
+        </p>
+        <div class="flex gap-3 mt-4 sm:mt-6">
+          <div class="mt-1 w-[32px] h-[32px]">
+            <img class="rounded-[10px]" src="./images/amanda-j.jpg" alt="Profile picture" />
+          </div>
+          <div class="flex flex-col">
+            <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Amanda J</p>
+            <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Marketing executive</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Testimonial 2 -->
-    <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
-      <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
-        Efficiency redefined! This app has completely transformed the way I manage information. The summaries are
-        concise, and it allows me to listen while I multitask. I feel informed without the need to sit
-        down and read through tons of content. I can catch up on important updates while I
-        code. Perfect for busy professionals!
-      </p>
-      <div class="flex gap-3 mt-4 sm:mt-6">
-        <div class="mt-1 w-[32px] h-[32px]">
-          <img class="rounded-[10px]" src="./images/david-m.jpg" alt="Profile picture" />
-        </div>
-        <div class="flex flex-col">
-          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">David M</p>
-          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Software Engineer</p>
+      <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
+        <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px] font-normal">
+          Efficiency redefined! This app has completely transformed the way I manage information. The summaries are
+          concise, and it allows me to listen while I multitask. I feel informed without the need to sit
+          down and read through tons of content. I can catch up on important updates while I
+          code. Perfect for busy professionals!
+        </p>
+        <div class="flex gap-3 mt-4 sm:mt-6">
+          <div class="mt-1 w-[32px] h-[32px]">
+            <img class="rounded-[10px]" src="./images/david-m.jpg" alt="Profile picture" />
+          </div>
+          <div class="flex flex-col">
+            <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">David M</p>
+            <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Software Engineer</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Testimonial 3 -->
-    <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
-      <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px]">
-        I love how I can listen to summarized podcasts and emails during my gym sessions. It allows me to stay informed
-        without missing a beat while I'm focusing on my fitness goals. The audio format fits seamlessly into my day,
-        whether I’m lifting weights or doing cardio. If you're a gym enthusiast like me, this app is a total
-        game-changer!
-      </p>
-      <div class="flex gap-3 mt-4 sm:mt-6">
-        <div class="mt-1 w-[32px] h-[32px]">
-          <img class="rounded-[10px]" src="./images/marcu-davis.jpg" alt="Profile picture" />
-        </div>
-        <div class="flex flex-col">
-          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Marcus Davis</p>
-          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Fitness Enthusiast</p>
+      <!-- Testimonial 3 -->
+      <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
+        <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px]">
+          I love how I can listen to summarized podcasts and emails during my gym sessions. It allows me to stay
+          informed
+          without missing a beat while I'm focusing on my fitness goals. The audio format fits seamlessly into my day,
+          whether I’m lifting weights or doing cardio. If you're a gym enthusiast like me, this app is a total
+          game-changer!
+        </p>
+        <div class="flex gap-3 mt-4 sm:mt-6">
+          <div class="mt-1 w-[32px] h-[32px]">
+            <img class="rounded-[10px]" src="./images/marcu-davis.jpg" alt="Profile picture" />
+          </div>
+          <div class="flex flex-col">
+            <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Marcus Davis</p>
+            <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Fitness Enthusiast</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Testimonial 4 -->
-    <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
-      <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px]">
-        I love how this app gives me audio summaries of my emails and podcasts. It’s like having
-        my own news anchor keeping me updated on the go. It’s precise, clear, and incredibly useful for anyone juggling
-        multiple tasks. As a startup founder, this app has been crucial to staying on top of everything!
-      </p>
-      <div class="flex gap-3 mt-4 sm:mt-6">
-        <div class="mt-1 w-[32px] h-[32px]">
-          <img class="rounded-[10px]" src="./images/david-zhang.jpg" alt="Profile picture" />
-        </div>
-        <div class="flex flex-col">
-          <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Peter Zhang</p>
-          <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Founder</p>
+      <!-- Testimonial 4 -->
+      <div class="bg-[#232526] text-customGrey h-auto w-full rounded-2xl p-4 sm:p-[22px]">
+        <p class="min-h-[160px] font-sans text-customGrey text-[14px] sm:text-[15px]">
+          I love how this app gives me audio summaries of my emails and podcasts. It’s like having
+          my own news anchor keeping me updated on the go. It’s precise, clear, and incredibly useful for anyone
+          juggling
+          multiple tasks. As a startup founder, this app has been crucial to staying on top of everything!
+        </p>
+        <div class="flex gap-3 mt-4 sm:mt-6">
+          <div class="mt-1 w-[32px] h-[32px]">
+            <img class="rounded-[10px]" src="./images/david-zhang.jpg" alt="Profile picture" />
+          </div>
+          <div class="flex flex-col">
+            <p class="text-customGrey font-sans text-[13px] sm:text-[14px] text-[#F2F2F2]">Peter Zhang</p>
+            <p class="text-customGrey font-sans text-[11px] sm:text-[12px] text-[#AAAAAA]">Founder</p>
+          </div>
         </div>
       </div>
     </div>
@@ -223,7 +246,7 @@
 
 
   <!-- Get started section -->
-  <section id="how-it-works" class="text-white mt-20 px-4">
+  <section id="how-it-works" class="text-white px-4 pt-[150px]">
     <div class="flex flex-col items-center text-center">
       <p class="font-normal text-4xl font-clash text-white leading-[60px] tracking-[-0.02em]">
         Get Started in 4 steps
@@ -273,7 +296,7 @@
 
   <!-- why we Love section -->
 
-  <section id="features" class="px-4 lg:px-10 mt-28">
+  <section id="features" class="px-4 lg:px-10 pt-[150px]">
     <div class="flex flex-col items-center mt-16 sm:mt-0 text-center">
       <p class="font-normal font-clash text-4xl text-[#F7F7F7] leading-[60px] tracking-[-0.02em]">
         Why You'll Love Synchrono.io
@@ -329,7 +352,7 @@
 
   <!-- FAQ Section -->
 
-  <section id="faq" class="mt-20 ml-10 mr-10">
+  <section id="faq" class="pt-[150px] ml-10 mr-10 ">
     <div class="flex flex-col items-center">
       <p class="font-light text-4xl font-clash text-[#F7F7F7] text-center leading-[40px] tracking-[-0.02em]">
         Frequently Asked Questions
@@ -522,6 +545,23 @@
 
     document.querySelectorAll("form").forEach((form) => {
       form.addEventListener("submit", handleSubmit);
+    });
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+
+        targetElement.classList.add('focus-animation');
+
+        setTimeout(() => {
+          targetElement.classList.remove('focus-animation');
+        }, 1000);
+      });
     });
   </script>
 </body>
