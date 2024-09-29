@@ -9,6 +9,19 @@
   <link rel="icon" href="/images/Logo.svg" type="image/png">
 
   <style>
+    .icon {
+      width: 24px;
+      /* Set a fixed width */
+      height: 24px;
+      /* Set a fixed height */
+    }
+
+    /* Alternatively, you can use max-width/height if you want some flexibility */
+    .icon {
+      max-width: 24px;
+      max-height: 24px;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -368,7 +381,7 @@
               How does Synchrono.io work with my email?
             </p>
             <div class="toggle-icon cursor-pointer">
-              <img class="icon" src="./images/Icon wrap plus.svg" alt="Icon" />
+              <img class="icon" src="./images/plus.svg" alt="Icon" />
             </div>
           </div>
           <div class="answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
@@ -383,10 +396,10 @@
         <div class="faq-item hover:bg-[#29292926] rounded-xl p-4 mb-5">
           <div class="flex justify-between">
             <p class="font-medium text-xl text-[#F7F7F7] leading-[28px] text-white">
-              How safe is my data safe?
+              How safe is my data?
             </p>
             <div class="toggle-icon cursor-pointer">
-              <img class="icon" src="./images/Icon wrap plus.svg" alt="Icon" />
+              <img class="icon" src="./images/plus.svg" alt="Icon" />
             </div>
           </div>
           <div class="answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
@@ -395,11 +408,6 @@
               ensure that your data is stored, processed, and protected in accordance with
               data protection regulations. We use industry-standard encryption, which allows you to control and
               delete your data, and ensure that any third-party services we use are also compliant with these standards.
-            </p>
-          </div>
-          <div class="answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <p class="text-[#94969C] font-sans text-[16px] mt-2">
-              Yes, we prioritize security and encryption for all your data.
             </p>
           </div>
         </div>
@@ -411,7 +419,7 @@
               Can I choose which podcasts to summarize?
             </p>
             <div class="toggle-icon cursor-pointer">
-              <img class="icon" src="./images/Icon wrap plus.svg" alt="Icon" />
+              <img class="icon" src="./images/plus.svg" alt="Icon" />
             </div>
           </div>
           <div class="answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
@@ -492,7 +500,7 @@
 
         // Collapse the answer
         answer.style.maxHeight = "0"; // Close with height 0
-        icon.src = "./images/Icon wrap plus.svg"; // Reset to plus icon
+        icon.src = "./images/plus.svg"; // Reset to plus icon
       });
     }
 
@@ -511,10 +519,11 @@
         // If the clicked item is not already open, open it
         if (!isCurrentlyOpen) {
           answer.style.maxHeight = answer.scrollHeight + "px"; // Expand the answer
-          toggleIcon.src = "./images/Icon wrap.svg"; // Change to minus icon
+          toggleIcon.src = "./images/minus.svg"; // Change to minus icon
         }
       });
     });
+
 
     const handleSubmit = (event) => {
       event.preventDefault();
