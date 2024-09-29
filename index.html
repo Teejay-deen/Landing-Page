@@ -570,7 +570,7 @@
 
         targetElement.classList.add('focus-animation');
 
-        toggleMenu();
+        if (targetId != 'landing') toggleMenu();
 
         setTimeout(() => {
           targetElement.classList.remove('focus-animation');
