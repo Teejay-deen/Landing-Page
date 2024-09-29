@@ -16,10 +16,6 @@
       /* Ensure it stays above other elements */
     }
 
-    .custom-nav-bar {
-      border-bottom-color: #333;
-    }
-
     @font-face {
       font-family: "Clash Display";
       src: url("./font/clash-display.ttf");
@@ -54,51 +50,56 @@
 
 <body class="bg-[#0F0F0F] h-screen ">
   <nav
-    class="w-full flex custom-nav-bar font-clash flex-col md:flex-row justify-between items-center md:px-20 lg:px-30 md:gap-10 gap-4 py-4 border-b sticky top-0 z-50  custom-nav-bar">
-    <!-- Logo -->
-    <div class="mt-2 cursor-pointer">
+    class="bg-[#0F0F0F] w-full flex custom-nav-bar font-clash items-center justify-between px-4 md:px-20 lg:px-30 py-4 border-b sticky top-0 z-50">
+
+    <!-- Logo (Left aligned) -->
+    <div class="mt-2 cursor-pointer flex items-center">
       <img src="./images/Logo.svg" alt="Logo" class="w-28 sm:w-32 md:w-40" />
     </div>
 
-    <!-- Mobile Menu Button -->
-    <div class="block md:hidden">
-      <button id="menu-btn" class="text-white focus:outline-none">
-        <img src="./images/menu.svg" alt="Menu Icon" class="w-6 h-6" />
-      </button>
-    </div>
-
-    <!-- Navigation Links -->
+    <!-- Navigation Links (Centralized) -->
     <div id="nav-links"
-      class="hidden md:flex flex-col md:flex-row justify-between items-center md:gap-10 gap-6 w-full md:w-auto transition-all duration-300 ease-in-out">
-      <div class="text-white flex gap-3 items-center justify-center" role="button">
-        <span class="text-base sm:text-lg md:text-xl font-sans">How it works</span>
-          <img src="./images/works.svg" alt="How it works icon" />
-      </div>
-      <div class="text-white flex gap-3 items-center justify-center" role="button">
-        <span class="text-base sm:text-lg md:text-xl font-sans">Features</span>
-        <img src="./images/features.svg" alt="Features icon" />
-
-      </div>
-      <div class="text-white flex gap-3 items-center justify-center" role="button">
-        <span class="text-base sm:text-lg md:text-xl font-sans">FAQ</span>
-          <img src="./images/faq.svg" alt="FAQ icon" />
+      class="hidden md:flex flex-col md:flex-row justify-between items-center md:gap-10 gap-6 w-full md:w-auto transition-all duration-300 ease-in-out absolute md:relative top-14 md:top-0 right-0 md:right-auto bg-[#0F0F0F] md:bg-transparent md:py-0 py-2 md:py-0">
+      <div class="flex flex-col md:flex-row md:gap-10 gap-6 items-center">
+        <a href="#how-it-works">
+          <div class="text-white flex gap-3 items-center justify-center" role="link">
+            <span class="text-base sm:text-lg md:text-xl font-sans">How it works</span>
+            <img src="./images/works.svg" alt="How it works icon" />
+          </div>
+        </a>
+        <a href="#features">
+          <div class="text-white flex gap-3 items-center justify-center" role="button">
+            <span class="text-base sm:text-lg md:text-xl font-sans">Features</span>
+            <img src="./images/features.svg" alt="Features icon" />
+          </div>
+        </a>
+        <a href="#faq">
+          <div class="text-white flex gap-3 items-center justify-center" role="button">
+            <span class="text-base sm:text-lg md:text-xl font-sans">FAQ</span>
+            <img src="./images/faq.svg" alt="FAQ icon" />
+          </div>
+        </a>
       </div>
     </div>
 
-    <!-- Join Waitlist Button -->
-    <div class="w-full md:w-auto mt-4 md:mt-0">
-      <div class="border-[5px] px-5 sm:px-7 py-2 rounded-full bg-[#E83B04] text-center">
-        <button class="text-white rounded-full font-sans">
-          Join waitlist
-        </button>
-      </div>
+    <!-- Mobile Menu Button (Right aligned) -->
+    <button id="menu-btn" class="text-white md:hidden focus:outline-none absolute right-5">
+      <img src="./images/menu.svg" alt="Menu Icon" class="w-6 h-6" />
+    </button>
+
+    <!-- Join Waitlist Button (Hidden on mobile, shown on desktop) -->
+    <div class="hidden md:block border-[5px] px-5 sm:px-7 py-2 rounded-full bg-[#E83B04] text-center">
+      <button class="text-white rounded-full font-sans">
+        Join waitlist
+      </button>
     </div>
   </nav>
 
-  <!-- title block -->
 
-  <section
-  style="background: #0F0F0F;"
+
+  <!-- Main Content (rest of the page remains the same) -->
+
+  <section style="background: #0F0F0F;"
     class="flex bg-[url('./images/FrameVector.png')] bg-no-repeat bg-cover flex-col items-center mt-[40px] sm:mt-[80px] px-4 sm:px-6 lg:px-10">
     <div class="text-white text-center">
       <img src="./images/Row.svg" alt="Beta Testers" class="mx-auto" />
@@ -204,7 +205,7 @@
 
 
   <!-- Get started section -->
-  <section class="text-white mt-20 px-4">
+  <section id="how-it-works" class="text-white mt-20 px-4">
     <div class="flex flex-col items-center text-center">
       <p class="font-normal text-4xl font-clash text-white leading-[60px] tracking-[-0.02em]">
         Get Started in 4 steps
@@ -241,24 +242,20 @@
           </p>
         </div>
         <div class="border-[#292929] -rotate-[3deg] h-[128px] border mt-5 rounded-2xl">
-            <p
-              class="px-5 mt-6 font-normal font-clash text-[14px] text-customGrey"
-            >
-              STEP 4
-            </p>
-            <p
-              class="px-5 font-sans mt-3 font-medium text-2xl leading-[40px] tracking-[-0.02em] text-white"
-            >
-              Stay informed, Stay Productive
-            </p>
-          </div>
+          <p class="px-5 mt-6 font-normal font-clash text-[14px] text-customGrey">
+            STEP 4
+          </p>
+          <p class="px-5 font-sans mt-3 font-medium text-2xl leading-[40px] tracking-[-0.02em] text-white">
+            Stay informed, Stay Productive
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- why we Love section -->
 
-  <section class="px-4 lg:px-10 mt-28">
+  <section id="features" class="px-4 lg:px-10 mt-28">
     <div class="flex flex-col items-center mt-16 sm:mt-0 text-center">
       <p class="font-normal font-clash text-4xl text-[#F7F7F7] leading-[60px] tracking-[-0.02em]">
         Why You'll Love Consequi.ai
@@ -276,7 +273,8 @@
         <p class="mt-3 mb-3 font-semibold text-xl text-[#FFFFFF] font-clash leading-[24px]">
           Simplicity
         </p>
-        <p class="sm:mb-30px font-light font-sans h-[125px] text-lg text-customGrey leading-[24px] tracking-[0.5px] text-18px">
+        <p
+          class="sm:mb-30px font-light font-sans h-[125px] text-lg text-customGrey leading-[24px] tracking-[0.5px] text-18px">
           With so much information generated
           daily, we cut through the noise and give you the most
           important points, reducing cognitive overload.
@@ -290,7 +288,8 @@
         <p class="mt-3 mb-3 font-semibold text-xl text-[#FFFFFF] font-clash leading-[24px]">
           Reduces Content Fatigue
         </p>
-        <p class="sm:mb-30px font-light font-sans h-[125px] text-lg text-customGrey leading-[24px] tracking-[0.5px] text-18px">
+        <p
+          class="sm:mb-30px font-light font-sans h-[125px] text-lg text-customGrey leading-[24px] tracking-[0.5px] text-18px">
           Instead of engaging with lengthy content that might not be entirely
           relevant, you can focus only on key takeaways.
         </p>
@@ -303,7 +302,8 @@
         <p class="mt-3 mb-3 font-semibold text-xl text-[#FFFFFF] font-clash leading-[24px]">
           Data Security
         </p>
-        <p class="sm:mb-30px font-light font-sans h-[125px] text-lg text-customGrey leading-[24px] tracking-[0.5px] text-18px">
+        <p
+          class="sm:mb-30px font-light font-sans h-[125px] text-lg text-customGrey leading-[24px] tracking-[0.5px] text-18px">
           Because your emails and podcasts contain personal and sensitive
           information, we've implemented industry-leading security measures to
           ensure your data is always protected.
@@ -314,7 +314,7 @@
 
   <!-- FAQ Section -->
 
-  <section class="mt-20 ml-10 mr-10">
+  <section id="faq" class="mt-20 ml-10 mr-10">
     <div class="flex flex-col items-center">
       <p class="font-light text-4xl font-clash text-[#F7F7F7] text-center leading-[40px] tracking-[-0.02em]">
         Frequently Asked Questions
@@ -394,7 +394,8 @@
         Ready to Simplify your Day?
       </p>
 
-      <p class="font-light text-center text-customGrey leading-[35px] font-sans text-lg sm:text-xl w-full max-w-2xl mt-5">
+      <p
+        class="font-light text-center text-customGrey leading-[35px] font-sans text-lg sm:text-xl w-full max-w-2xl mt-5">
         Join hundreds of professionals who are already making their day more
         productive.
       </p>
@@ -412,8 +413,8 @@
       </form>
 
       <!-- <p class="mt-4 text-xs text-gray-400 text-center"> -->
-        <!-- By subscribing, you agree to our -->
-        <!-- <a href="#" class="underline text-gray-300">Terms and Conditions</a>. -->
+      <!-- By subscribing, you agree to our -->
+      <!-- <a href="#" class="underline text-gray-300">Terms and Conditions</a>. -->
       <!-- </p> -->
     </div>
   </section>
@@ -430,37 +431,13 @@
   </footer>
 
   <script>
-    const faqItems = document.querySelectorAll(".faq-item");
+    // Toggle Menu
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.getElementById("nav-links");
 
-    // Function to close all FAQ items
-    function closeAllFaqs() {
-      faqItems.forEach((item) => {
-        const answer = item.querySelector(".answer");
-        const icon = item.querySelector(".icon");
-
-        // Collapse the answer
-        answer.style.maxHeight = "0"; // Close with height 0
-        icon.src = "./images/Icon wrap plus.svg"; // Reset to plus icon
-      });
-    }
-
-    // Loop through each FAQ item and add a click event listener
-    faqItems.forEach((item) => {
-      const toggleIcon = item.querySelector(".toggle-icon img");
-      const answer = item.querySelector(".answer");
-
-      item.addEventListener("click", function () {
-        const isCurrentlyOpen =
-          answer.style.maxHeight && answer.style.maxHeight !== "0px";
-
-        // Close all FAQ items
-        closeAllFaqs();
-
-        if (!isCurrentlyOpen) {
-          answer.style.maxHeight = answer.scrollHeight + "px";
-          toggleIcon.src = "./images/Icon wrap.svg";
-        }
-      });
+    menuBtn.addEventListener("click", function () {
+      navLinks.classList.toggle("hidden");
+      navLinks.classList.toggle("flex");
     });
   </script>
 </body>
