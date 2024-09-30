@@ -96,6 +96,15 @@
   </script>
   <!-- Meta Pixel Code -->
   <script>
+    self.addEventListener('fetch', function (event) {
+      if (event.request.url.includes('fbevents.js')) {
+        return; // Don't intercept Facebook SDK requests
+      }
+      event.respondWith(caches.match(event.request).then(function (response) {
+        return response || fetch(event.request);
+      }));
+    });
+
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
@@ -574,7 +583,7 @@
         .then(() => {
           myForm.reset();
           alert('Thanks for joining the waitlist! 🎉 you will receive updates via email soon');
-          fbq('track', 'joinWaitlist', { email: formData.toString() });
+          fbq('track', 'joinWaitlist', { email: new URLSearchParams(formData).toString() });
         })
         .catch((error) => alert(error))
         .finally(() => {
