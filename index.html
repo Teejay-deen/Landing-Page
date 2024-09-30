@@ -564,19 +564,17 @@
     });
 
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
       event.preventDefault();
 
       const myForm = event.target;
       const email = myForm.querySelector("input[name='email']").value;
       const formData = new FormData(myForm);
+
       const submitButton = myForm.querySelector(".submit-button");
       submitButton.disabled = true;
       submitButton.textContent = "Joining...";
-      let location;
 
-      const response = await fetch('https://ipinfo.io?token=47922b1e32da65');
-      const data = await response.json();
 
       fetch("/", {
         method: "POST",
@@ -586,7 +584,7 @@
         .then(() => {
           myForm.reset();
           alert('Thanks for joining the waitlist! 🎉 you will receive updates via email soon');
-          fbq('track', 'joinWaitlist', { email, location: data });
+          fbq('track', 'joinWaitlist', { email });
         })
         .catch((error) => alert(error))
         .finally(() => {
@@ -607,7 +605,6 @@
         const targetElement = document.getElementById(targetId);
 
         targetElement.scrollIntoView({ behavior: 'smooth' });
-
         targetElement.classList.add('focus-animation');
 
         if (targetId != 'landing') toggleMenu();
