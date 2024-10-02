@@ -94,7 +94,7 @@
       },
     };
   </script>
-  <script>
+  <script id="facebook-pixel-script" style="display: none">
     self.addEventListener('fetch', function (event) {
       if (event.request.url.includes('fbevents.js')) {
         return; // Don't intercept Facebook SDK requests
@@ -103,20 +103,6 @@
         return response || fetch(event.request);
       }));
     });
-
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1213559269890807');
-    fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1213559269890807&ev=PageView&noscript=1" /></noscript>
@@ -183,6 +169,35 @@
       <img src="./images/Row.svg" alt="Beta Testers" class="mx-auto" />
       <span class="text-base text-[#737373] font-sans">from our Beta Testers</span>
     </div>
+    <div id="cookie-banner"
+      style="position: fixed; bottom: 0; width: 100%; background-color:rgba(227, 101, 62, 0.8); padding: 20px; display: none; text-align: center;">
+      <p class="text-customGrey font-sans mb-5">We use cookies to improve your experience. By continuing, you agree to
+        our <a class="font-sans"
+          href="https://darangilabs.notion.site/Privacy-Policy-113c260b0e6280229f6ae07ba494d336?pvs=4"
+          target="_blank">Privacy Policy</a> and cookie use.</p>
+      <button class="font-sans text-white rounded-full" id="accept-cookies"
+        style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">Accept</button>
+      <button class="font-sans text-white rounded-full" id="manage-cookies"
+        style="padding: 10px 20px; background-color: #008CBA; color: white; border: none; cursor: pointer;">Manage
+        Preferences</button>
+    </div>
+
+    <div id="cookie-preferences" class="font-sans text-customGrey"
+      style="background-color:rgba(227, 101, 62, 0.8); display: none; position: fixed; bottom: 0; width: 100%; padding: 20px; text-align: center; border-top: 1px solid #ccc;">
+      <p>Choose which cookies you allow:</p>
+      <label>
+        <input type="checkbox" id="essential-cookies" checked disabled /> Essential Cookies
+      </label><br>
+      <label>
+        <input type="checkbox" id="analytics-cookies" /> Analytics Cookies
+      </label><br>
+      <label>
+        <input type="checkbox" id="marketing-cookies" checked /> Marketing Cookies
+      </label><br>
+      <button class="font-sans text-white rounded-full mt-5" id="save-preferences"
+        style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">Save
+        Preferences</button>
+    </div>
 
     <!-- Main Heading -->
     <div
@@ -201,15 +216,30 @@
 
     <!-- Form Section -->
     <div class="flex flex-col items-center mt-8 w-full">
-      <form name="waitlist" method="POST" netlify
-        class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto" id="waitlist-form">
-        <input id="waitlist-input" required name="email" type="email" placeholder="Your email"
-          class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
+      <div class="flex flex-col items-center mt-8 w-full p-5">
+        <form id="waitlist-form" class="text-center" name="waitlist" method="POST" netlify>
+          <div class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto">
+            <input required name="email" type="email" placeholder="Your email"
+              class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
 
-        <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
-          <button class="font-sans text-white rounded-full submit-button" type="submit">Join waitlist</button>
-        </div>
-      </form>
+            <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
+              <button class="font-sans text-white rounded-full submit-button" type="submit">Join waitlist</button>
+            </div>
+          </div>
+          <div class="flex sm:flex-row text-center justify-center items-center mt-5">
+            <span class="font-sans text-[14px] text-customGrey leading-[24px]"> By joining, you agree to our <a
+                href="https://darangilabs.notion.site/Terms-of-service-113c260b0e62801590dced100fed92fe?pvs=4"
+                target="_blank">
+                Terms of service
+              </a>
+            </span>
+            <input required
+              class="ml-[5px] h-4 w-4 text-[#E83B04] focus:ring-[#E83B04] checked:#E83B04 checked:border-transparent"
+              type="checkbox">
+          </div>
+
+        </form>
+      </div>
     </div>
     <!-- </section> -->
 
@@ -482,28 +512,43 @@
     </div>
 
     <div class="flex flex-col items-center mt-8 w-full p-5">
-      <form class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto" id="waitlist-form"
-        name="waitlist" method="POST" netlify>
-        <input required name="email" type="email" placeholder="Your email"
-          class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
+      <form id="waitlist-form" class="text-center" name="waitlist" method="POST" netlify>
+        <div class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto">
+          <input required name="email" type="email" placeholder="Your email"
+            class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
 
-        <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
-          <button class="font-sans text-white rounded-full submit-button" type="submit">Join waitlist</button>
+          <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
+            <button class="font-sans text-white rounded-full submit-button" type="submit">Join waitlist</button>
+          </div>
         </div>
-      </form>
-    </div>
-    <div class="flex flex-col items-center mt-8 w-full p-5">
+        <div class="flex sm:flex-row text-center justify-center items-center mt-5">
+          <span class="font-sans text-[14px] text-customGrey leading-[24px]"> By joining, You agree to our <a
+              href="https://darangilabs.notion.site/Terms-of-service-113c260b0e62801590dced100fed92fe?pvs=4">
+              Terms of service
+            </a>
+          </span>
+          <input required
+            class="ml-[5px] h-4 w-4 text-[#E83B04] focus:ring-[#E83B04] checked:#E83B04 checked:border-transparent"
+            type="checkbox">
+        </div>
 
-      <p
-        class="font-light text-center text-customGrey leading-[35px] font-sans text-lg sm:text-xl w-full max-w-2xl mt-5">
-        Got questions? <a href="mailto:hey@synchrono.io " class="text-[#E83B04] text-[20px]">Contact us</a>
-      </p>
+      </form>
     </div>
   </section>
 
+  <div class="flex flex-col items-center mt-10 w-full p-5">
+
+    <p class="font-light text-center text-customGrey leading-[35px] font-sans text-lg sm:text-xl w-full max-w-2xl mt-5">
+      <a target="_blank" href="https://darangilabs.notion.site/Privacy-Policy-113c260b0e6280229f6ae07ba494d336?pvs=4"
+        class="text-[#E83B04] text-[15px]">Privacy policy</a> |
+      <a target="_blank" href="https://darangilabs.notion.site/Terms-of-service-113c260b0e62801590dced100fed92fe?pvs=4"
+        class="text-[#E83B04] text-[15px]">Terms of service</a>
+      | <a href="mailto:hey@synchrono.io " class="text-[#E83B04] text-[15px]">Contact us</a>
+    </p>
+  </div>
   <!-- footer -->
 
-  <footer class="px-4 sm:px-10 lg:px-40 bg-[#191A1B] mt-28 py-4 flex justify-between items-center">
+  <footer class="px-4 sm:px-10 lg:px-40 bg-[#191A1B] mt-15 py-4 flex justify-between items-center">
     <div>
       <img src="./images/Logo.svg" alt="Logo" class="h-8" />
     </div>
@@ -582,7 +627,9 @@
         .then(() => {
           myForm.reset();
           alert('Thanks for joining the waitlist! 🎉 you will receive updates via email soon');
-          fbq('track', 'joinWaitlist', { email });
+          const marketingCookies = localStorage.getItem('marketingCookies') === 'true';
+          if (marketingCookies)
+            fbq('track', 'joinWaitlist', { email });
         })
         .catch((error) => alert(error))
         .finally(() => {
@@ -612,6 +659,60 @@
         }, 1000);
       });
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Check if cookies are already accepted
+      if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+      } else {
+        loadFacebookPixel();
+      }
+
+      // Accept cookies button
+      document.getElementById('accept-cookies').addEventListener('click', function () {
+        localStorage.setItem('cookiesAccepted', 'true');
+        localStorage.setItem('analyticsCookies', 'true');
+        localStorage.setItem('marketingCookies', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+        loadFacebookPixel();
+      });
+
+      // Manage cookies button
+      document.getElementById('manage-cookies').addEventListener('click', function () {
+        document.getElementById('cookie-banner').style.display = 'none';
+        document.getElementById('cookie-preferences').style.display = 'block';
+      });
+
+      // Save cookie preferences
+      document.getElementById('save-preferences').addEventListener('click', function () {
+        const analyticsCookies = document.getElementById('analytics-cookies').checked;
+        const marketingCookies = document.getElementById('marketing-cookies').checked;
+
+        localStorage.setItem('cookiesAccepted', 'true');
+        localStorage.setItem('analyticsCookies', analyticsCookies);
+        localStorage.setItem('marketingCookies', marketingCookies);
+
+        document.getElementById('cookie-preferences').style.display = 'none';
+        loadFacebookPixel();
+      });
+
+      function loadFacebookPixel() {
+        !function (f, b, e, v, n, t, s) {
+          if (f.fbq) return; n = f.fbq = function () {
+            n.callMethod ?
+              n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          };
+          if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+          n.queue = []; t = b.createElement(e); t.async = !0;
+          t.src = v; s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1213559269890807');
+        fbq('track', 'PageView');
+      }
+    });
+
   </script>
 </body>
 
