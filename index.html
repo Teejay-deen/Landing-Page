@@ -94,7 +94,7 @@
       },
     };
   </script>
-  <script id="facebook-pixel-script" style="display: none">
+  <script>
     self.addEventListener('fetch', function (event) {
       if (event.request.url.includes('fbevents.js')) {
         return; // Don't intercept Facebook SDK requests
