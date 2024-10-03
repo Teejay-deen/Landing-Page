@@ -192,7 +192,7 @@
         <input type="checkbox" id="analytics-cookies" /> Analytics Cookies
       </label><br>
       <label>
-        <input type="checkbox" id="marketing-cookies"/> Marketing Cookies
+        <input type="checkbox" id="marketing-cookies" /> Marketing Cookies
       </label><br>
       <button class="font-sans text-white rounded-full mt-5" id="save-preferences"
         style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">Save
@@ -216,28 +216,28 @@
 
     <!-- Form Section -->
     <div class="flex flex-col items-center mt-8 w-full">
-        <form id="waitlist-form" class="text-center" name="waitlist" method="POST" netlify>
-          <div class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto">
-            <input required name="email" type="email" placeholder="Your email"
-              class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
+      <form id="waitlist-form" class="text-center" name="waitlist" method="POST" netlify>
+        <div class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto">
+          <input required name="email" type="email" placeholder="Your email"
+            class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
 
-            <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
-              <button class="font-sans text-white rounded-full submit-button" type="submit">Join waitlist</button>
-            </div>
+          <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
+            <button class="font-sans text-white rounded-full submit-button" type="submit">Join waitlist</button>
           </div>
-          <div class="flex sm:flex-row text-center justify-center items-center mt-5">
-            <span class="font-sans text-[14px] text-customGrey leading-[24px]"> By joining, you agree to our <a
-                href="https://darangilabs.notion.site/Terms-of-service-113c260b0e62801590dced100fed92fe?pvs=4"
-                target="_blank">
-                Terms of service
-              </a>
-            </span>
-            <input required
-              class="ml-[5px] h-4 w-4 text-[#E83B04] focus:ring-[#E83B04] checked:#E83B04 checked:border-transparent"
-              type="checkbox">
-          </div>
+        </div>
+        <div class="flex sm:flex-row text-center justify-center items-center mt-5">
+          <span class="font-sans text-[14px] text-customGrey leading-[24px]"> By joining, you agree to our <a
+              href="https://darangilabs.notion.site/Terms-of-service-113c260b0e62801590dced100fed92fe?pvs=4"
+              target="_blank">
+              Terms of service
+            </a>
+          </span>
+          <input required
+            class="ml-[5px] h-4 w-4 text-[#E83B04] focus:ring-[#E83B04] checked:#E83B04 checked:border-transparent"
+            type="checkbox">
+        </div>
 
-        </form>
+      </form>
     </div>
     <!-- </section> -->
 
@@ -533,26 +533,28 @@
       </form>
     </div>
   </section>
-
-  <div class="flex flex-col items-center mt-10 w-full p-5">
-
-    <p class="font-light text-center text-customGrey leading-[35px] font-sans text-lg sm:text-xl w-full max-w-2xl mt-5">
-      <a target="_blank" href="https://darangilabs.notion.site/Privacy-Policy-113c260b0e6280229f6ae07ba494d336?pvs=4"
-        class="text-[#E83B04] text-[15px]">Privacy policy</a> |
-      <a target="_blank" href="https://darangilabs.notion.site/Terms-of-service-113c260b0e62801590dced100fed92fe?pvs=4"
-        class="text-[#E83B04] text-[15px]">Terms of service</a>
-      | <a href="mailto:hey@synchrono.io " class="text-[#E83B04] text-[15px]">Contact us</a>
-    </p>
-  </div>
   <!-- footer -->
 
-  <footer class="px-4 sm:px-10 lg:px-40 bg-[#191A1B] mt-15 py-4 flex justify-between items-center">
-    <div>
-      <img src="./images/Logo.svg" alt="Logo" class="h-8" />
+  <footer class="px-4 sm:px-10 lg:px-40 bg-[#191A1B] mt-20 py-4">
+    <div class="flex justify-between items-center mt-5">
+      <div>
+        <img src="./images/Logo.svg" alt="Logo" class="h-8" />
+      </div>
+      <p class="text-[#FFFFFF] font-normal text-center text-[14px] sm:text-[16px]">
+        Copyright 2024. All Rights Reserved
+      </p>
     </div>
-    <p class="text-[#FFFFFF] font-normal text-center text-[14px] sm:text-[16px]">
-      Copyright 2024. All Rights Reserved
+    <p
+      class="font-light text-center text-customGrey leading-[35px] font-sans flex text-lg mt-5 items-center justify-center">
+      <a target="_blank" href="https://darangilabs.notion.site/Privacy-Policy-113c260b0e6280229f6ae07ba494d336?pvs=4"
+        class="text-white text-[15px]">Privacy Policy</a>
+      <img class="mr-2 ml-2" src="./images/dot-white.svg" alt="">
+      <a target="_blank" href="https://darangilabs.notion.site/Terms-of-service-113c260b0e62801590dced100fed92fe?pvs=4"
+        class="text-white text-[15px]">Terms of Service</a>
+      <img class="mr-2 ml-2" src="./images/dot-white.svg" alt="">
+      <a href="mailto:hey@synchrono.io" class="text-white text-[15px]">Contact Us</a>
     </p>
+
   </footer>
 
   <script>
