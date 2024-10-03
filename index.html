@@ -169,17 +169,17 @@
       <img src="./images/Row.svg" alt="Beta Testers" class="mx-auto" />
       <span class="text-base text-[#737373] font-sans">from our Beta Testers</span>
     </div>
-    <div id="cookie-banner"
-      style="position: fixed; bottom: 0; width: 100%; background-color:rgba(227, 101, 62, 0.8); padding: 20px; display: none; text-align: center;">
-      <p class="text-customGrey font-sans mb-5">We use cookies to improve your experience. By continuing, you agree to
-        our <a class="font-sans"
+    <div id="cookie-banner" class="rounded-tl-[10px] rounded-tr-[10px]"
+      style="position: fixed; bottom: 0; width: 100%; background-color:#232526; padding: 20px; display: none; text-align: center; border-top: 2px solid grey">
+      <p class="text-customGrey font-clash mb-5 sm:text-[15px] text-[20px] leading-[24px]">We use cookies to improve your experience. By continuing, you agree to
+        our <a class="font-sans underline"
           href="https://darangilabs.notion.site/Privacy-Policy-113c260b0e6280229f6ae07ba494d336?pvs=4"
           target="_blank">Privacy Policy</a> and cookie use.</p>
-      <button class="font-sans text-white rounded-full" id="accept-cookies"
-        style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">Accept</button>
-      <button class="font-sans text-white rounded-full" id="manage-cookies"
-        style="padding: 10px 20px; background-color: #008CBA; color: white; border: none; cursor: pointer;">Manage
-        Preferences</button>
+      <button class="font-sans text-white rounded-full mr-[5px] text-[14px] leading-[24px]" id="accept-cookies"
+        style="padding: 10px 20px; background-color: #E83B04; color: white; border: none; cursor: pointer;">Accept</button>
+      <button class="font-sans text-white rounded-full  ml-[5px] mr-[5px] text-[14px] leading-[24px]" id="manage-cookies"
+        style="padding: 10px 20px; background-color: #232526; color: white; border: 1px solid white; cursor: pointer;">Manage
+        Preference</button>
     </div>
 
     <div id="cookie-preferences" class="font-sans text-customGrey"
@@ -217,14 +217,20 @@
     <!-- Form Section -->
     <div class="flex flex-col items-center mt-8 w-full">
       <form id="waitlist-form" class="text-center" name="waitlist" method="POST" netlify>
-        <div class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto">
+        <div class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto relative">
+          <!-- Email Input -->
           <input required name="email" type="email" placeholder="Your email"
-            class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
+            class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-white rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
 
-          <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
+          <!-- Line between input and button -->
+          <div class="hidden sm:block bg-white absolute ml-[calc(35%)] sm:mt-1 h-[20px] w-[15px] mb-[5px]"></div>
+
+          <!-- Button -->
+          <div class="border-[5px] border-white px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
             <button class="font-sans text-white rounded-full submit-button" type="submit">Join waitlist</button>
           </div>
         </div>
+
         <div class="flex sm:flex-row text-center justify-center items-center mt-5">
           <span class="font-sans text-[14px] text-customGrey leading-[24px]"> By joining, you agree to our <a
               href="https://darangilabs.notion.site/Terms-of-service-113c260b0e62801590dced100fed92fe?pvs=4"
@@ -508,20 +514,26 @@
         productive.
       </p>
     </div>
-
-    <div class="flex flex-col items-center mt-5 w-full p-5">
+    <div class="flex flex-col items-center mt-5 w-full">
       <form id="waitlist-form" class="text-center" name="waitlist" method="POST" netlify>
-        <div class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto">
+        <div class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto relative">
+          <!-- Email Input -->
           <input required name="email" type="email" placeholder="Your email"
-            class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
+            class="px-4 py-2 w-full sm:w-80 text-center bg-white text-gray-900 border border-white rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500" />
 
-          <div class="border-[4px] px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
+          <!-- Line between input and button -->
+          <div class="hidden sm:block bg-white absolute ml-[calc(35%)] sm:mt-1 h-[20px] w-[15px] mb-[5px]"></div>
+
+          <!-- Button -->
+          <div class="border-[5px] border-white px-7 py-2 rounded-full bg-[#E83B04] mt-4 sm:mt-0 sm:ml-2">
             <button class="font-sans text-white rounded-full submit-button" type="submit">Join waitlist</button>
           </div>
         </div>
+
         <div class="flex sm:flex-row text-center justify-center items-center mt-5">
-          <span class="font-sans text-[14px] text-customGrey leading-[24px]"> By joining, You agree to our <a
-              href="https://darangilabs.notion.site/Terms-of-service-113c260b0e62801590dced100fed92fe?pvs=4">
+          <span class="font-sans text-[14px] text-customGrey leading-[24px]"> By joining, you agree to our <a
+              href="https://darangilabs.notion.site/Terms-of-service-113c260b0e62801590dced100fed92fe?pvs=4"
+              target="_blank">
               Terms of service
             </a>
           </span>
